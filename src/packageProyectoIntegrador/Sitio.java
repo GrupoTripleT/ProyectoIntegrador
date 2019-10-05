@@ -23,6 +23,10 @@ public class Sitio {
 		
 	}
 	
+	public void publicar(Publicacion publicacion) {
+		this.publicaciones.add(publicacion);
+	}
+	
 	
 	
 
