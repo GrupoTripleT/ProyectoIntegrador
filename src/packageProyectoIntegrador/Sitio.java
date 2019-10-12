@@ -1,33 +1,63 @@
 package packageProyectoIntegrador;
 
 import java.util.Set;
+import java.time.LocalDate;
+
 
 public class Sitio {
-	
-	private Set<Publicacion> publicaciones;
-	private Buscador buscador;
-	private Set<Inmueble> inmuebles;
-	private Set<Usuario> usuarios;
-	
-	
-	
-	public Set<Publicacion> getPublicaciones(){
-		return this.publicaciones;
-	}
-	
-	public Set<Publicacion> buscarPublicaciones() {
-		return buscador.buscar(this.getPublicaciones());
-		
-	}
-	public void cancelarReserva(Publicacion publicacion) {
-		
-	}
-	
-	public void publicar(Publicacion publicacion) {
-		this.publicaciones.add(publicacion);
-	}
-	
-	
-	
 
+	private Set<Usuario> usuarios;
+	private Set<Inmueble> inmuebles;
+	private Set<Publicacion> publicaciones;
+	
+	
+	
+	public Set<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
+
+	public Set<Inmueble> getInmuebles() {
+		return inmuebles;
+	}
+
+
+	public void setInmuebles(Set<Inmueble> inmuebles) {
+		this.inmuebles = inmuebles;
+	}
+
+
+	public Set<Publicacion> getPublicaciones() {
+		return publicaciones;
+	}
+
+
+	public void setPublicaciones(Set<Publicacion> publicaciones) {
+		this.publicaciones = publicaciones;
+	}
+
+
+	public void publicar(Publicacion publi) {
+		this.getPublicaciones().add(publi);
+	}
+	
+	public void registrarInmueble(Inmueble inmueble) {
+		this.getInmuebles().add(inmueble);
+	}
+	
+	public void registrarUsuario(Usuario usuario) {
+		this.getUsuarios().add(usuario);
+	}
+	
+	public Set<Publicacion> buscarPublicaciones(String ubicacion, LocalDate fechaInicio, LocalDate fechaSalida) {
+		return null; // realizar Busqueda
+	}
+	
+	
+	
 }

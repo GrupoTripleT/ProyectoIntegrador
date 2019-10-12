@@ -1,5 +1,5 @@
 package packageProyectoIntegrador;
 
-public abstract class Usuario {
+public class Usuario {
 
 }
