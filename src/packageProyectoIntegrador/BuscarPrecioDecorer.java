@@ -19,7 +19,7 @@ public class BuscarPrecioDecorer extends BuscarBaseDecorer  {
 		List<Publicacion> PublicacionesAux = new ArrayList<Publicacion>();
 		for (Publicacion e : super.Buscar(publicaciones, criterio))  
         { 
-            if (e.precio > criterio.precioMin && e.precio < criterio.precioMax) 
+            if (e.getPrecio() > criterio.precioMin && e.getPrecio() < criterio.precioMax) 
             { 
             	PublicacionesAux.add(e);
             } 

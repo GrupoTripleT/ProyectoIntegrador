@@ -17,9 +17,9 @@ public class Buscador implements IBuscador {
 		List<Publicacion> PublicacionesAux = new ArrayList<Publicacion>();
 		for (Publicacion e : publicaciones)  
         { 
-            if (e.ciudadDestino == criterio.ciudadDestino &&
-            	e.fechaEntrada == criterio.fechaEntrada &&
-            	e.fechaSalida == criterio.fechaSalida) 
+            if (e.getCiudadDestino() == criterio.ciudadDestino &&
+            	e.getFechaEntrada() == criterio.fechaEntrada &&
+            	e.getFechaSalida() == criterio.fechaSalida) 
             { 
             	PublicacionesAux.add(e);
             } 
