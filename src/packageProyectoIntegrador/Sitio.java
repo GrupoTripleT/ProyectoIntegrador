@@ -54,9 +54,6 @@ public class Sitio {
 		this.getUsuarios().add(usuario);
 	}
 	
-	public Set<Publicacion> buscarPublicaciones(Buscador buscador) {
-		return buscador.buscar(this.getPublicaciones());
-	}
 	
 	
 	
