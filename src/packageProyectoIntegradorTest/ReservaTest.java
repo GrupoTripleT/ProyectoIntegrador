@@ -20,10 +20,10 @@ class ReservaTest {
 	void setUp() throws Exception {
 		
 		
-		p1.setCiudadDestino("BuenosAires");
+		p1.setCiudad("BuenosAires");
 
 		p1.setPrecio(500);
-		p1.setCantHuesped(5);
+		p1.setCapacidad(5);
 		Usuario prop = new Usuario();
 		p1.setPropietario(prop);
 		

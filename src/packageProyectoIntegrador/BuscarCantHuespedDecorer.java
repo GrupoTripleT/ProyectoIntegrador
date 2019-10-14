@@ -19,7 +19,7 @@ public class BuscarCantHuespedDecorer extends BuscarBaseDecorer  {
 		List<Publicacion> PublicacionesAux = new ArrayList<Publicacion>();
 		for (Publicacion e : super.Buscar(publicaciones, criterio))  
         { 
-            if (e.getCantHuesped() >= criterio.cantHuesped) 
+            if (e.getCapacidad() >= criterio.cantHuesped) 
             { 
             	PublicacionesAux.add(e);
             } 
