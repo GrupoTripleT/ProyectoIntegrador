@@ -18,7 +18,7 @@ public class Buscador implements IBuscador {
 		for (Publicacion e : publicaciones)  
         { 
             if (e.getCiudadDestino() == filtros.ciudadDestino &&
-            	e.esReservaValida(filtros.fechaEntrada, filtros.fechaSalida)) 
+            	!e.hayReservasEnFecha(filtros.fechaEntrada, filtros.fechaSalida)) 
             { 
             	PublicacionesAux.add(e);
             } 

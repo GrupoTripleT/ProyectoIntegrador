@@ -33,13 +33,13 @@ class ReservaTest {
 
 	@Test
 	void agregarReserva() { 
-		LocalDate now = LocalDate.now();
-		//LocalDate later = LocalDate.parse(String.format("24/10/2019", LocalDate.now().getDayOfMonth() + 10, LocalDate.now().getMonthValue()));
+		LocalDate fechaEntrada = LocalDate.now();
+
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-		LocalDate later = LocalDate.parse("24/10/2019", formatter);
+		LocalDate fechaSalida = LocalDate.parse("24/10/2019", formatter);
 		
 		Usuario inq = new Usuario();
-		Reserva res = new Reserva(now, later, inq);
+		Reserva res = new Reserva(fechaEntrada, fechaSalida, inq);
 		
 		
 		p1.agregarReserva(res);
@@ -48,10 +48,30 @@ class ReservaTest {
 	
 	
 	@Test
-	void agregarValidarReserva() {
-		LocalDate now = LocalDate.now();
-		//LocalDate later = LocalDate.parse(String.format("24/10/2019", LocalDate.now().getDayOfMonth() + 10, LocalDate.now().getMonthValue()));
+	void reservaNoValida() {
+		LocalDate fechaEntrada = LocalDate.now();
+		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+		LocalDate fechaSalida = LocalDate.parse("24/10/2019", formatter);
+		
+		Usuario inq = new Usuario();
+		Reserva res = new Reserva(fechaEntrada, fechaSalida, inq);
+		
+		res.cambiarEstado(new EstadoAprobado());
+		p1.agregarReserva(res);
+		
+		
+		Usuario inq2 = new Usuario();
+		Reserva res2 = new Reserva(fechaEntrada, fechaSalida, inq2); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
+		
+		assertEquals(true, p1.hayReservasEnFecha(res2.getFechaEntrada(), res2.getFechaSalida()));
+	}
+	
+	@Test
+	void reservaValida() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+		
+		LocalDate now = LocalDate.now();
 		LocalDate later = LocalDate.parse("24/10/2019", formatter);
 		
 		Usuario inq = new Usuario();
@@ -59,10 +79,18 @@ class ReservaTest {
 		res.cambiarEstado(new EstadoAprobado());
 		p1.agregarReserva(res);
 		
-		Usuario inq2 = new Usuario();
-		//Reserva res2 = new Reserva(now, later, inq2);
+		LocalDate nowReserva3 = LocalDate.parse("20/10/2020", formatter);
+		LocalDate laterReserva3 = LocalDate.parse("30/10/2020", formatter);
 		
-		assertEquals(false, p1.esReservaValida(now, later));
+		Usuario inq2 = new Usuario();
+		Reserva res3 = new Reserva(nowReserva3, laterReserva3, inq2); // no existe reserva previamente agregada en esta fecha
+		
+		assertEquals(false, p1.hayReservasEnFecha(res3.getFechaEntrada(), res3.getFechaSalida()));
+		
+		p1.agregarReserva(res3);
+		
+		assertEquals(2, p1.getReservas().size());
+		
 	}
 	
 	@Test 

@@ -35,22 +35,17 @@ public class Publicacion {
 
 	public void setPropietario(Usuario propietario) { this.propietario = propietario; }
 	
-	public boolean esReservaValida(LocalDate fe, LocalDate fs){		
-		return reservas.stream().anyMatch(
-					rs -> rs.getFechaEntrada().isEqual(fe) || rs.getFechaEntrada().isAfter(fe) &&
-						  rs.getFechaSalida().isEqual(fs) || rs.getFechaSalida().isBefore(fs) &&
-					      !(rs.getEstado() instanceof EstadoAprobado)
-				); 
+	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){		
+		return reservas.stream().anyMatch(rs -> 
+			(rs.getFechaEntrada().isEqual(fe) || rs.getFechaEntrada().isAfter(fe)) &&
+			(rs.getFechaSalida().isEqual(fs) || rs.getFechaSalida().isBefore(fs)) &&
+			rs.getEstado() instanceof EstadoAprobado); 
 	}
 	
 	public void agregarReserva(Reserva r) {
-		if (!hayReservas() || esReservaValida(r.getFechaEntrada(), r.getFechaSalida())) {
+		if (!hayReservasEnFecha(r.getFechaEntrada(), r.getFechaSalida())) {
 			this.reservas.add(r);
 		}
-	}
-	
-	private boolean hayReservas() {
-		return getReservas().size() > 0;
 	}
 
 }
