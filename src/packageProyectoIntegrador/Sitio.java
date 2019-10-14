@@ -1,10 +1,18 @@
 package packageProyectoIntegrador;
 
+import java.util.HashSet;
 import java.util.Set;
 import java.time.LocalDate;
 
 
 public class Sitio {
+
+	public Sitio() {
+		super();
+		this.usuarios = new HashSet<Usuario>();
+		this.inmuebles = new HashSet<Inmueble>();
+		this.publicaciones = new HashSet<Publicacion>();
+	}
 
 	private Set<Usuario> usuarios;
 	private Set<Inmueble> inmuebles;
