@@ -14,18 +14,19 @@ class ReservaTest {
 	
 	
 	Sitio site = new Sitio();
-	Publicacion p1 = new Publicacion();
+	Publicacion p1;
+	Inmueble in = new Inmueble();
 
 	@BeforeEach
 	void setUp() throws Exception {
 		
-		
-		p1.setCiudad("BuenosAires");
+		in.setCiudad("BuenosAires");
+		in.setPrecio(500);
+		in.setCapacidad(5);
 
-		p1.setPrecio(500);
-		p1.setCapacidad(5);
 		Usuario prop = new Usuario();
-		p1.setPropietario(prop);
+		
+		p1 = new Publicacion(in, prop); // agrego inmueble y propitario
 		
 		site.publicar(p1);
 		

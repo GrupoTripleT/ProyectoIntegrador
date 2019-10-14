@@ -17,7 +17,7 @@ public class Buscador implements IBuscador {
 		List<Publicacion> PublicacionesAux = new ArrayList<Publicacion>();
 		for (Publicacion e : publicaciones)  
         { 
-            if (e.getCiudad() == filtros.ciudadDestino &&
+            if (e.getInmueble().getCiudad() == filtros.ciudadDestino &&
             	!e.hayReservasEnFecha(filtros.fechaEntrada, filtros.fechaSalida)) 
             { 
             	PublicacionesAux.add(e);
