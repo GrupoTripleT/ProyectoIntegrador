@@ -54,8 +54,8 @@ public class Sitio {
 		this.getUsuarios().add(usuario);
 	}
 	
-	public Set<Publicacion> buscarPublicaciones(String ubicacion, LocalDate fechaInicio, LocalDate fechaSalida) {
-		return null; // realizar Busqueda
+	public Set<Publicacion> buscarPublicaciones(Buscador buscador) {
+		return buscador.buscar(this.getPublicaciones());
 	}
 	
 	

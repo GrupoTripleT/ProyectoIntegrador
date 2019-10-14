@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_AZ_NsO6nEemTPeIXaQzxMQ">
+  <modelElement href="BuscadorNicolasTancredi.uml#_AZNKkO6nEemTPeIXaQzxMQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_TO76cO6nEemTPeIXaQzxMQ" sourceAnchor="91.0,0.0" targetAnchor="140.0,129.0" superClass="_STQVUO6nEemTPeIXaQzxMQ" subClass="_Odx4kO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_TO43IO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_TO76ce6nEemTPeIXaQzxMQ"/>
+    <bendpoints xmi:id="_qbIUQO6nEemTPeIXaQzxMQ" sourceY="-30" targetX="-110" targetY="39"/>
+    <bendpoints xmi:id="_qbIUQe6nEemTPeIXaQzxMQ" sourceX="110" sourceY="-30" targetY="39"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:GeneralizationVisual" xmi:id="_TVenUO6nEemTPeIXaQzxMQ" sourceAnchor="75.0,0.0" targetAnchor="140.0,129.0" superClass="_STQVUO6nEemTPeIXaQzxMQ" subClass="_O727se6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_TVeAQO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_TVenUe6nEemTPeIXaQzxMQ"/>
+    <bendpoints xmi:id="_qbIUQ-6nEemTPeIXaQzxMQ" sourceY="-39" targetX="125" targetY="39"/>
+    <bendpoints xmi:id="_qbIURO6nEemTPeIXaQzxMQ" sourceX="-125" sourceY="-39" targetY="39"/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_hdaLUO6nEemTPeIXaQzxMQ" sourceAnchor="140.0,0.0" targetAnchor="0.0,95.0" target="_M2S9YO6nEemTPeIXaQzxMQ" source="_STQVUO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_hdXvEO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_hdaLUe6nEemTPeIXaQzxMQ"/>
+    <bendpoints xmi:id="_qbIUQu6nEemTPeIXaQzxMQ" sourceY="-152" targetX="-346"/>
+    <nameVisual xmi:id="_hdaLUu6nEemTPeIXaQzxMQ" text="">
+      <visualProperties xmi:id="_hewPIu6nEemTPeIXaQzxMQ" position="167.0,-19.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_hdaLU-6nEemTPeIXaQzxMQ" aggregationKind="NONE" name="criterios">
+      <modelElement href="BuscadorNicolasTancredi.uml#_hdXvEe6nEemTPeIXaQzxMQ"/>
+      <visualProperties xmi:id="_hewPIe6nEemTPeIXaQzxMQ" position="1.0,-111.0"/>
+      <visibility xmi:id="_hdaLVO6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_hdaLVe6nEemTPeIXaQzxMQ" label="*" max="-1"/>
+    </sourceRole>
+    <targetRole xmi:id="_hdaLVu6nEemTPeIXaQzxMQ" aggregationKind="NONE" name="buscador" navigable="true">
+      <modelElement href="BuscadorNicolasTancredi.uml#_hdXvFO6nEemTPeIXaQzxMQ"/>
+      <visualProperties xmi:id="_hewPI-6nEemTPeIXaQzxMQ" position="-112.0,-46.99999999999997"/>
+      <visibility xmi:id="_hdaLV-6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_hdaLWO6nEemTPeIXaQzxMQ" label="*" max="-1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_qZxCUO6nEemTPeIXaQzxMQ" sourceAnchor="408.0,88.0" targetAnchor="0.0,15.0" target="_M2S9YO6nEemTPeIXaQzxMQ" source="_HousUe6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_qZumEO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_qZxCUe6nEemTPeIXaQzxMQ"/>
+    <nameVisual xmi:id="_qZxCUu6nEemTPeIXaQzxMQ" text="">
+      <visualProperties xmi:id="_qbI7UO6nEemTPeIXaQzxMQ" position="-5.5,2.0"/>
+    </nameVisual>
+    <sourceRole xmi:id="_qZxCU-6nEemTPeIXaQzxMQ" aggregationKind="NONE" name="sitio">
+      <modelElement href="BuscadorNicolasTancredi.uml#_qZvNIO6nEemTPeIXaQzxMQ"/>
+      <visualProperties xmi:id="_qbIURe6nEemTPeIXaQzxMQ" position="66.39999999999998,-47.0"/>
+      <visibility xmi:id="_qZxCVO6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_qZxCVe6nEemTPeIXaQzxMQ" label="*" max="-1"/>
+    </sourceRole>
+    <targetRole xmi:id="_qZxCVu6nEemTPeIXaQzxMQ" aggregationKind="NONE" name="buscador" navigable="true">
+      <modelElement href="BuscadorNicolasTancredi.uml#_qZvNI-6nEemTPeIXaQzxMQ"/>
+      <visualProperties xmi:id="_qbI7Ue6nEemTPeIXaQzxMQ" position="-147.0,-86.0"/>
+      <visibility xmi:id="_qZxCV-6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_qZxCWO6nEemTPeIXaQzxMQ" label="*" max="-1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_Odx4kO6nEemTPeIXaQzxMQ" name="CriterioXCiudad" generalizations="_TO76cO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_OdxRgO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_Odx4ke6nEemTPeIXaQzxMQ" position="38.0,551.0" size="182.0,166.0"/>
+    <visibility xmi:id="_Odx4ku6nEemTPeIXaQzxMQ" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_HousUe6nEemTPeIXaQzxMQ" name="Sitio" associationsOut="_qZxCUO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_HousUO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_HovTYO6nEemTPeIXaQzxMQ" position="29.0,33.0" size="408.0,92.0"/>
+    <visibility xmi:id="_HovTYe6nEemTPeIXaQzxMQ" label="+"/>
+    <attributes xmi:id="_qZxpYO6nEemTPeIXaQzxMQ" name="buscador">
+      <modelElement href="BuscadorNicolasTancredi.uml#_qZvNI-6nEemTPeIXaQzxMQ"/>
+      <visibility xmi:id="_qZxpYe6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_qZxpYu6nEemTPeIXaQzxMQ" label="*" max="-1"/>
+      <type xmi:id="_qZxpY-6nEemTPeIXaQzxMQ" name="Buscador">
+        <modelElement href="BuscadorNicolasTancredi.uml#_M2SWUO6nEemTPeIXaQzxMQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_XkhaoO6nEemTPeIXaQzxMQ" name="buscarPublicaciones">
+      <modelElement href="BuscadorNicolasTancredi.uml#_XkflcO6nEemTPeIXaQzxMQ"/>
+      <visibility xmi:id="_Xkhaoe6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_Xkhaou6nEemTPeIXaQzxMQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_Xkhao-6nEemTPeIXaQzxMQ">
+        <modelElement href="BuscadorNicolasTancredi.uml#_Xkflce6nEemTPeIXaQzxMQ"/>
+        <type xmi:id="_XkhapO6nEemTPeIXaQzxMQ" name="Publicacion">
+          <modelElement href="BuscadorNicolasTancredi.uml#_ArIoEO6nEemTPeIXaQzxMQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_Xkhape6nEemTPeIXaQzxMQ" name="buscador">
+        <modelElement href="BuscadorNicolasTancredi.uml#_Xkflcu6nEemTPeIXaQzxMQ"/>
+        <cardinality xmi:id="_Xkhapu6nEemTPeIXaQzxMQ" label="1" max="1" min="1"/>
+        <type xmi:id="_Xkhap-6nEemTPeIXaQzxMQ" name="Buscador">
+          <modelElement href="BuscadorNicolasTancredi.uml#_M2SWUO6nEemTPeIXaQzxMQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_M2S9YO6nEemTPeIXaQzxMQ" name="Buscador" associationsIn="_hdaLUO6nEemTPeIXaQzxMQ _qZxCUO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_M2SWUO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_M2S9Ye6nEemTPeIXaQzxMQ" position="585.0,106.0" size="316.0,190.0"/>
+    <visibility xmi:id="_M2S9Yu6nEemTPeIXaQzxMQ" label="+"/>
+    <operations xmi:id="_gkowQe6nEemTPeIXaQzxMQ" name="buscar">
+      <modelElement href="BuscadorNicolasTancredi.uml#_gkoJMO6nEemTPeIXaQzxMQ"/>
+      <visibility xmi:id="_gkowQu6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_gkowQ-6nEemTPeIXaQzxMQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_gkowRO6nEemTPeIXaQzxMQ">
+        <modelElement href="BuscadorNicolasTancredi.uml#_gkoJMe6nEemTPeIXaQzxMQ"/>
+        <type xmi:id="_gkowRe6nEemTPeIXaQzxMQ" name="Publicacion">
+          <modelElement href="BuscadorNicolasTancredi.uml#_ArIoEO6nEemTPeIXaQzxMQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_gkowRu6nEemTPeIXaQzxMQ" name="publicaciones">
+        <modelElement href="BuscadorNicolasTancredi.uml#_gkowQO6nEemTPeIXaQzxMQ"/>
+        <cardinality xmi:id="_gkowR-6nEemTPeIXaQzxMQ" label="1" max="1" min="1"/>
+        <type xmi:id="_gkowSO6nEemTPeIXaQzxMQ" name="Publicacion">
+          <modelElement href="BuscadorNicolasTancredi.uml#_ArIoEO6nEemTPeIXaQzxMQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_STQVUO6nEemTPeIXaQzxMQ" name="Criterio" associationsOut="_hdaLUO6nEemTPeIXaQzxMQ" subclassedBy="_TO76cO6nEemTPeIXaQzxMQ _TVenUO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_STPuQO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_STQVUe6nEemTPeIXaQzxMQ" position="99.0,353.0" size="280.0,129.0"/>
+    <visibility xmi:id="_STQVUu6nEemTPeIXaQzxMQ" label="+"/>
+    <attributes xmi:id="_hdaLWe6nEemTPeIXaQzxMQ" name="buscador">
+      <modelElement href="BuscadorNicolasTancredi.uml#_hdXvFO6nEemTPeIXaQzxMQ"/>
+      <visibility xmi:id="_hdaLWu6nEemTPeIXaQzxMQ" label="+"/>
+      <cardinality xmi:id="_hdaLW-6nEemTPeIXaQzxMQ" label="*" max="-1"/>
+      <type xmi:id="_hdaLXO6nEemTPeIXaQzxMQ" name="Buscador">
+        <modelElement href="BuscadorNicolasTancredi.uml#_M2SWUO6nEemTPeIXaQzxMQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_mjFEou6nEemTPeIXaQzxMQ" name="filtrar">
+      <modelElement href="BuscadorNicolasTancredi.uml#_mjFEoO6nEemTPeIXaQzxMQ"/>
+      <visibility xmi:id="_mjFEo-6nEemTPeIXaQzxMQ" label="#"/>
+      <cardinality xmi:id="_mjFEpO6nEemTPeIXaQzxMQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_mjFEpe6nEemTPeIXaQzxMQ" name="publicaciones">
+        <modelElement href="BuscadorNicolasTancredi.uml#_mjFEoe6nEemTPeIXaQzxMQ"/>
+        <cardinality xmi:id="_mjFEpu6nEemTPeIXaQzxMQ" label="1" max="1" min="1"/>
+        <type xmi:id="_mjFEp-6nEemTPeIXaQzxMQ" name="Publicacion">
+          <modelElement href="BuscadorNicolasTancredi.uml#_ArIoEO6nEemTPeIXaQzxMQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_O727se6nEemTPeIXaQzxMQ" name="CriterioXFechaInicio" generalizations="_TVenUO6nEemTPeIXaQzxMQ">
+    <modelElement href="BuscadorNicolasTancredi.uml#_O727sO6nEemTPeIXaQzxMQ"/>
+    <visualProperties xmi:id="_O727su6nEemTPeIXaQzxMQ" position="289.0,560.0" size="152.0,160.0"/>
+    <visibility xmi:id="_O727s-6nEemTPeIXaQzxMQ" label="+"/>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
