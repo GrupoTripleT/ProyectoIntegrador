@@ -6,6 +6,7 @@ public class Usuario {
 	private String apellido;
 	private String mail;
 	private Integer numero;
+	
 	public String getNombre() {
 		return nombre;
 	}

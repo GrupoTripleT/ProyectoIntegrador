@@ -1,23 +1,25 @@
 package packageProyectoIntegrador;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 import java.util.Set;
 
 public class Inmueble {
 	
-	private String tipoDeInmueble;
+	private TipoDeInmueble tipoDeInmueble;
 	private Integer capacidad;
 	private String pais;
 	private String ciudad;
 	private String direccion;
-	private Set<Servicio> servicios;
+	private List<Servicio> servicios;
 	private Double precio;
-	private LocalDate horarioCheckIn;
-	private LocalDate horarioCheckOut;
+	private LocalTime horarioCheckIn;
+	private LocalTime horarioCheckOut;
 	
 	
-	public Inmueble(String tipoDeInmueble, Integer capacidad, String pais, String ciudad, String direccion,
-			Set<Servicio> servicios, Double precio, LocalDate horarioCheckIn, LocalDate horarioCheckOut) {
+	public Inmueble(TipoDeInmueble tipoDeInmueble, Integer capacidad, String pais, String ciudad, String direccion,
+			List<Servicio> servicios, Double precio, LocalTime horarioCheckIn, LocalTime horarioCheckOut) {
 		super();
 		this.tipoDeInmueble = tipoDeInmueble;
 		this.capacidad = capacidad;
@@ -29,10 +31,15 @@ public class Inmueble {
 		this.horarioCheckIn = horarioCheckIn;
 		this.horarioCheckOut = horarioCheckOut;
 	}
-	public String getTipoDeInmueble() {
+	public TipoDeInmueble getTipoDeInmueble() {
 		return tipoDeInmueble;
 	}
-	public void setTipoDeInmueble(String tipoDeInmueble) {
+	
+	public String saberTipoDeInmueble() {
+		return this.getTipoDeInmueble().getTipo();
+		}
+	
+	public void setTipoDeInmueble(TipoDeInmueble tipoDeInmueble) {
 		this.tipoDeInmueble = tipoDeInmueble;
 	}
 	public Integer getCapacidad() {
@@ -59,10 +66,10 @@ public class Inmueble {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
-	public Set<Servicio> getServicios() {
+	public List<Servicio> getServicios() {
 		return servicios;
 	}
-	public void setServicios(Set<Servicio> servicios) {
+	public void setServicios(List<Servicio> servicios) {
 		this.servicios = servicios;
 	}
 	public Double getPrecio() {
@@ -71,19 +78,22 @@ public class Inmueble {
 	public void setPrecio(Double precio) {
 		this.precio = precio;
 	}
-	public LocalDate getHorarioCheckIn() {
+	public LocalTime getHorarioCheckIn() {
 		return horarioCheckIn;
 	}
-	public void setHorarioCheckIn(LocalDate horarioCheckIn) {
+	public void setHorarioCheckIn(LocalTime horarioCheckIn) {
 		this.horarioCheckIn = horarioCheckIn;
 	}
-	public LocalDate getHorarioCheckOut() {
+	public LocalTime getHorarioCheckOut() {
 		return horarioCheckOut;
 	}
-	public void setHorarioCheckOut(LocalDate horarioCheckOut) {
+	public void setHorarioCheckOut(LocalTime horarioCheckOut) {
 		this.horarioCheckOut = horarioCheckOut;
 	}
 	
 	
+	public Boolean poseeEsteServicio(Servicio servicio) {
+		return this.getServicios().contains(servicio);
+	}
 
 }

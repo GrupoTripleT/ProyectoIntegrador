@@ -1,45 +1,46 @@
 package packageProyectoIntegrador;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 import java.time.LocalDate;
 
 
 public class Sitio {
 
-	private Set<Usuario> usuarios;
-	private Set<Inmueble> inmuebles;
-	private Set<Publicacion> publicaciones;
+	private List<Usuario> usuarios;
+	private List<Inmueble> inmuebles;
+	private List<Publicacion> publicaciones;
 	
 	
 	
-	public Set<Usuario> getUsuarios() {
-		return usuarios;
+	public Sitio() {
+		super();
+		this.inmuebles = new ArrayList<Inmueble>();
+		this.publicaciones = new ArrayList<Publicacion>();
+		this.usuarios = new ArrayList<Usuario>();
+
 	}
 
 
-	public void setUsuarios(Set<Usuario> usuarios) {
-		this.usuarios = usuarios;
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
 	}
 
 
-	public Set<Inmueble> getInmuebles() {
+	
+
+
+	public List<Inmueble> getInmuebles() {
 		return inmuebles;
 	}
 
 
-	public void setInmuebles(Set<Inmueble> inmuebles) {
-		this.inmuebles = inmuebles;
-	}
-
-
-	public Set<Publicacion> getPublicaciones() {
+	public List<Publicacion> getPublicaciones() {
 		return publicaciones;
 	}
 
-
-	public void setPublicaciones(Set<Publicacion> publicaciones) {
-		this.publicaciones = publicaciones;
-	}
 
 
 	public void publicar(Publicacion publi) {
