@@ -26,8 +26,6 @@ public class Publicacion {
 	public void setInmueble(Inmueble inmueble) { this.inmueble = inmueble; }
 	
 	public List<Reserva> getReservas() { return reservas; }
-
-	public void setReservas(Reserva r) { this.reservas.add(r);}
 	
 	// #Metodos
 	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){		
