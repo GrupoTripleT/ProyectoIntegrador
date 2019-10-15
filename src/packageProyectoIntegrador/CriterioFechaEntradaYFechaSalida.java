@@ -1,6 +1,7 @@
 package packageProyectoIntegrador;
 
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -34,9 +35,19 @@ public class CriterioFechaEntradaYFechaSalida extends Criterio {
 	@Override
 	public Set<Publicacion> filtrar(Set<Publicacion> publicaciones) {
 		// TODO Auto-generated method stub
-		return 
-		publicaciones.stream().filter(publicacion -> publicacion.esResevaValida(this.getFechaDeEntrada(),
-				this.getFechaDeSalida())).collect(Collectors.toSet());
+//		return 
+//		publicaciones.stream().filter(publicacion -> publicacion.esResevaValida(this.getFechaDeEntrada(),
+//				this.getFechaDeSalida())).collect(Collectors.toSet() );
+		
+		
+		Set<Publicacion> auxSet = new HashSet<Publicacion>();
+		for(Publicacion p : publicaciones) {
+			if(p.esResevaValida(this.getFechaDeEntrada(),this.getFechaDeSalida())) {
+				auxSet.add(p);
+			}
+			
+		}
+		return auxSet;
 	}
 
 }

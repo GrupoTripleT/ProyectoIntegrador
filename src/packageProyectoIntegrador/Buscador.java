@@ -1,10 +1,7 @@
-package packageProyectoIntegrador;
+import packageProyectoIntegrador.*;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 public class Buscador {
 	
@@ -22,10 +19,9 @@ public class Buscador {
 		
 		for(Criterio c : criterios) {
 			//Set<Publicacion> publicacionesFiltradasXCadaCriterio = HashSet<Publicacion>();
-			
-			
+			publicaciones = c.filtrar(publicaciones);
 		}
-		return null;
+		return publicaciones;
 		//this.getCriterios().stream().map(criterio -> criterio.filtrar(publicaciones).collector(Collectors.toSet()));
 		
 	}
