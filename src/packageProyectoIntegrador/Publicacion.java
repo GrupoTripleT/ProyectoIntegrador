@@ -8,7 +8,6 @@ public class Publicacion {
 	
 	private Inmueble inmueble;
 	private Usuario propietario;
-	
 	private List<Reserva> reservas;
 	
 	public Publicacion(Inmueble inmueble, Usuario propitario) { 
@@ -17,12 +16,12 @@ public class Publicacion {
 		setPropietario(propitario);
 	}
 	
-	public Inmueble getInmueble() { return inmueble; }
-	
 	public Usuario getPropietario() { return propietario; }
 
 	public void setPropietario(Usuario propietario) { this.propietario = propietario; }
 
+	public Inmueble getInmueble() { return inmueble; }
+	
 	public void setInmueble(Inmueble inmueble) { this.inmueble = inmueble; }
 	
 	public List<Reserva> getReservas() { return reservas; }

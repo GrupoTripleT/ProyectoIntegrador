@@ -1,54 +1,37 @@
 package packageProyectoIntegrador;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Sitio {
 
+	private List<Usuario> usuarios;
+	private List<Inmueble> inmuebles;
+	private List<Publicacion> publicaciones;
+	
+	
+	
 	public Sitio() {
 		super();
-		this.usuarios = new HashSet<Usuario>();
-		this.inmuebles = new HashSet<Inmueble>();
-		this.publicaciones = new HashSet<Publicacion>();
+		this.inmuebles = new ArrayList<Inmueble>();
+		this.publicaciones = new ArrayList<Publicacion>();
+		this.usuarios = new ArrayList<Usuario>();
+
 	}
 
-	private Set<Usuario> usuarios;
-	private Set<Inmueble> inmuebles;
-	private Set<Publicacion> publicaciones;
-	
-	
-	
-	public Set<Usuario> getUsuarios() {
-		return usuarios;
+	public List<Usuario> getUsuarios() {
+		return this.usuarios;
 	}
 
-
-	public void setUsuarios(Set<Usuario> usuarios) {
-		this.usuarios = usuarios;
-	}
-
-
-	public Set<Inmueble> getInmuebles() {
+	public List<Inmueble> getInmuebles() {
 		return inmuebles;
 	}
 
 
-	public void setInmuebles(Set<Inmueble> inmuebles) {
-		this.inmuebles = inmuebles;
-	}
-
-
-	public Set<Publicacion> getPublicaciones() {
+	public List<Publicacion> getPublicaciones() {
 		return publicaciones;
 	}
-
-
-	public void setPublicaciones(Set<Publicacion> publicaciones) {
-		this.publicaciones = publicaciones;
-	}
-
 
 	public void publicar(Publicacion publi) {
 		this.getPublicaciones().add(publi);
@@ -61,11 +44,5 @@ public class Sitio {
 	public void registrarUsuario(Usuario usuario) {
 		this.getUsuarios().add(usuario);
 	}
-	
-	public Set<Publicacion> buscarPublicaciones(String ubicacion, LocalDate fechaInicio, LocalDate fechaSalida) {
-		return null; // realizar Busqueda
-	}
-	
-	
-	
+
 }
