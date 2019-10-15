@@ -4,20 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import javafx.util.converter.LocalTimeStringConverter;
-import packageProyectoIntegrador.*;
-
 import static org.mockito.Mockito.*;
-
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-import java.time.LocalTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 class InmuebleTest {
 
 	public Inmueble inmuebleDePrueba;
