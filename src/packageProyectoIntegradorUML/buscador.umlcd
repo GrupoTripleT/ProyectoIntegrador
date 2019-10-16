@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_BlQQ0O_BEemhMrLZY20oRw">
+  <modelElement href="buscador.uml#_BjRT0O_BEemhMrLZY20oRw"/>
+  <edges xsi:type="com.yattasolutions.diagrams:UsageVisual" xmi:id="_5jH7gO_CEemhMrLZY20oRw" sourceAnchor="389.0,0.0" targetAnchor="221.0,152.0" client="_ShcsMe_BEemhMrLZY20oRw" supplier="_2KZsMO_CEemhMrLZY20oRw">
+    <modelElement href="buscador.uml#_5jGtYO_CEemhMrLZY20oRw"/>
+    <visualProperties xmi:id="_5jH7ge_CEemhMrLZY20oRw"/>
+    <nameVisual xmi:id="_5jH7gu_CEemhMrLZY20oRw" text=""/>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:UsageVisual" xmi:id="_O6I8YO_DEemhMrLZY20oRw" sourceAnchor="399.0,152.0" targetAnchor="15.0,0.0" client="_2KZsMO_CEemhMrLZY20oRw" supplier="_TKMHMO_BEemhMrLZY20oRw">
+    <modelElement href="buscador.uml#_O6HHMO_DEemhMrLZY20oRw"/>
+    <visualProperties xmi:id="_O6I8Ye_DEemhMrLZY20oRw"/>
+    <nameVisual xmi:id="_O6I8Yu_DEemhMrLZY20oRw" text=""/>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_RexuQO_BEemhMrLZY20oRw" name="Sitio">
+    <modelElement href="buscador.uml#_RepLYO_BEemhMrLZY20oRw"/>
+    <visualProperties xmi:id="_RexuQe_BEemhMrLZY20oRw" position="36.0,66.0" size="599.0,143.0"/>
+    <visibility xmi:id="_RexuQu_BEemhMrLZY20oRw" label="+"/>
+    <operations xmi:id="_eQbb0O_BEemhMrLZY20oRw" name="buscarPublicaciones">
+      <modelElement href="buscador.uml#_eQUuIO_BEemhMrLZY20oRw"/>
+      <visibility xmi:id="_eQbb0e_BEemhMrLZY20oRw" label="+"/>
+      <cardinality xmi:id="_eQbb0u_BEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_eQbb0-_BEemhMrLZY20oRw">
+        <modelElement href="buscador.uml#_eQUuIe_BEemhMrLZY20oRw"/>
+        <type xmi:id="_eQbb1O_BEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_eQbb1e_BEemhMrLZY20oRw" name="filtros">
+        <modelElement href="buscador.uml#_eQVVMO_BEemhMrLZY20oRw"/>
+        <cardinality xmi:id="_eQbb1u_BEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:InterfaceVisual" xmi:id="_2KZsMO_CEemhMrLZY20oRw" supplying="_5jH7gO_CEemhMrLZY20oRw" using="_O6I8YO_DEemhMrLZY20oRw" name="IFiltro">
+    <modelElement href="buscador.uml#_2KYeEO_CEemhMrLZY20oRw"/>
+    <visualProperties xmi:id="_2KZsMe_CEemhMrLZY20oRw" position="203.0,267.0" size="443.0,152.0"/>
+    <visibility xmi:id="_2KZsMu_CEemhMrLZY20oRw" label="+"/>
+    <operations xmi:id="_2o8CUO_CEemhMrLZY20oRw" name="aplicarFiltro">
+      <modelElement href="buscador.uml#_2o6NIO_CEemhMrLZY20oRw"/>
+      <visibility xmi:id="_2o8CUe_CEemhMrLZY20oRw" label="+"/>
+      <cardinality xmi:id="_2o8CUu_CEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_2o8CU-_CEemhMrLZY20oRw">
+        <modelElement href="buscador.uml#_2o6NIe_CEemhMrLZY20oRw"/>
+        <type xmi:id="_2o8CVO_CEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_2o8CVe_CEemhMrLZY20oRw" name="publicaciones">
+        <modelElement href="buscador.uml#_2o6NIu_CEemhMrLZY20oRw"/>
+        <visualProperties xmi:id="_9YAiYO_CEemhMrLZY20oRw" position="327.0,335.0" size="209.0,25.0"/>
+        <cardinality xmi:id="_2o8CVu_CEemhMrLZY20oRw" label="1" max="1" min="1"/>
+        <type xmi:id="_2o8CV-_CEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_ShcsMe_BEemhMrLZY20oRw" using="_5jH7gO_CEemhMrLZY20oRw" name="FiltroXCiudad">
+    <modelElement href="buscador.uml#_ShcsMO_BEemhMrLZY20oRw"/>
+    <visualProperties xmi:id="_ShcsMu_BEemhMrLZY20oRw" position="35.0,593.0" size="508.0,123.0"/>
+    <visibility xmi:id="_ShcsM-_BEemhMrLZY20oRw" label="+"/>
+    <attributes xmi:id="_DxiQQO_DEemhMrLZY20oRw" name="ciudad">
+      <modelElement href="buscador.uml#_DxgbEO_DEemhMrLZY20oRw"/>
+      <visibility xmi:id="_DxiQQe_DEemhMrLZY20oRw" label="-"/>
+      <cardinality xmi:id="_DxiQQu_DEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <type xmi:id="_DxiQQ-_DEemhMrLZY20oRw" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_zZF3oO_BEemhMrLZY20oRw" name="aplicarFiltro">
+      <modelElement href="buscador.uml#_zZEpgO_BEemhMrLZY20oRw"/>
+      <visibility xmi:id="_zZF3oe_BEemhMrLZY20oRw" label="+"/>
+      <cardinality xmi:id="_zZF3ou_BEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_0z_vYO_BEemhMrLZY20oRw">
+        <modelElement href="buscador.uml#_0z9TIO_BEemhMrLZY20oRw"/>
+        <type xmi:id="_0z_vYe_BEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_zZF3o-_BEemhMrLZY20oRw" name="publicaciones">
+        <modelElement href="buscador.uml#_zZEpge_BEemhMrLZY20oRw"/>
+        <cardinality xmi:id="_zZF3pO_BEemhMrLZY20oRw" label="1" max="1" min="1"/>
+        <type xmi:id="_zZF3pe_BEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_TKMHMO_BEemhMrLZY20oRw" supplying="_O6I8YO_DEemhMrLZY20oRw" name="FiltroXFechas">
+    <modelElement href="buscador.uml#_TKLgIO_BEemhMrLZY20oRw"/>
+    <visualProperties xmi:id="_TKMHMe_BEemhMrLZY20oRw" position="587.0,593.0" size="616.0,-1.0"/>
+    <visibility xmi:id="_TKMHMu_BEemhMrLZY20oRw" label="+"/>
+    <attributes xmi:id="_K6DLEO_DEemhMrLZY20oRw" name="fechaEntrada">
+      <modelElement href="buscador.uml#_K6CkAO_DEemhMrLZY20oRw"/>
+      <visibility xmi:id="_K6DLEe_DEemhMrLZY20oRw" label="-"/>
+      <cardinality xmi:id="_K6DLEu_DEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <type xmi:id="_K6DLE-_DEemhMrLZY20oRw" name="LocalTime">
+        <modelElement href="buscador.uml#_DXZj4O_BEemhMrLZY20oRw"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_MQwfUO_DEemhMrLZY20oRw" name="fechaSalida">
+      <modelElement href="buscador.uml#_MQvRMO_DEemhMrLZY20oRw"/>
+      <visibility xmi:id="_MQwfUe_DEemhMrLZY20oRw" label="-"/>
+      <cardinality xmi:id="_MQwfUu_DEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <type xmi:id="_MQwfU-_DEemhMrLZY20oRw" name="LocalTime">
+        <modelElement href="buscador.uml#_DXZj4O_BEemhMrLZY20oRw"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_4RH9kO_BEemhMrLZY20oRw" name="aplicarFiltro">
+      <modelElement href="buscador.uml#_4RGvcO_BEemhMrLZY20oRw"/>
+      <visibility xmi:id="_4RH9ke_BEemhMrLZY20oRw" label="+"/>
+      <cardinality xmi:id="_4RH9ku_BEemhMrLZY20oRw" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_4RIkoO_BEemhMrLZY20oRw">
+        <modelElement href="buscador.uml#_4RGvce_BEemhMrLZY20oRw"/>
+        <type xmi:id="_4RIkoe_BEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_4RIkou_BEemhMrLZY20oRw" name="publicaciones">
+        <modelElement href="buscador.uml#_4RHWgO_BEemhMrLZY20oRw"/>
+        <visualProperties xmi:id="_5w21gO_CEemhMrLZY20oRw" position="747.0,608.0" size="209.0,25.0"/>
+        <cardinality xmi:id="_4RIko-_BEemhMrLZY20oRw" label="1" max="1" min="1"/>
+        <type xmi:id="_4RIkpO_BEemhMrLZY20oRw" name="Publicacion">
+          <modelElement href="buscador.uml#_DM4V8O_BEemhMrLZY20oRw"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>

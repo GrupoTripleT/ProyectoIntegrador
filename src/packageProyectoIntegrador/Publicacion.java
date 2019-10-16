@@ -40,4 +40,10 @@ public class Publicacion {
 		}
 	}
 	// #endMetodos
+
+	public String getCiudad() {
+		return this.getInmueble().getCiudad();
+	}
+
+	
 }

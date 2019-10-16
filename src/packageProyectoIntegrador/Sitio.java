@@ -1,35 +1,34 @@
 package packageProyectoIntegrador;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class Sitio {
 
-	private List<Usuario> usuarios;
-	private List<Inmueble> inmuebles;
-	private List<Publicacion> publicaciones;
+	private Set<Usuario> usuarios;
+	private Set<Inmueble> inmuebles;
+	private Set<Publicacion> publicaciones;
 	
 	
 	
 	public Sitio() {
 		super();
-		this.inmuebles = new ArrayList<Inmueble>();
-		this.publicaciones = new ArrayList<Publicacion>();
-		this.usuarios = new ArrayList<Usuario>();
+		this.inmuebles = new HashSet<Inmueble>();
+		this.publicaciones = new HashSet<Publicacion>();
+		this.usuarios = new HashSet<Usuario>();
 
 	}
 
-	public List<Usuario> getUsuarios() {
+	public Set<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
 
-	public List<Inmueble> getInmuebles() {
+	public Set<Inmueble> getInmuebles() {
 		return inmuebles;
 	}
 
 
-	public List<Publicacion> getPublicaciones() {
+	public Set<Publicacion> getPublicaciones() {
 		return publicaciones;
 	}
 
@@ -44,5 +43,15 @@ public class Sitio {
 	public void registrarUsuario(Usuario usuario) {
 		this.getUsuarios().add(usuario);
 	}
+	
+	public Set<Publicacion> buscarPublicaciones(Set<IFiltro> filtros) {			
+		Set<Publicacion> publicacionesFiltradas = new HashSet<Publicacion>();
+		for(IFiltro f : filtros) {
+			publicacionesFiltradas = f.aplicarFiltro(this.getPublicaciones());
+		}
+		
+		return publicacionesFiltradas;
+			
+		}
 
 }

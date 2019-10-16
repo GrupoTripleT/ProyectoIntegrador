@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:UMLLabProfile="http:///schemas/UMLLabProfile/NS/0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xsi:schemaLocation="http:///schemas/UMLLabProfile/NS/0 pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile">
+  <uml:Model xmi:id="_BjRT0O_BEemhMrLZY20oRw" name="buscador">
+    <eAnnotations xmi:id="_B2KaoO_BEemhMrLZY20oRw" source="http://ns.yatta.de/umllab">
+      <contents xmi:type="ecore:EAnnotation" xmi:id="_B2LBsO_BEemhMrLZY20oRw" source="codegen">
+        <details xmi:id="_B2LBse_BEemhMrLZY20oRw" key="codegenDirectory" value="/ProyectoIntegrador/src"/>
+        <details xmi:id="_EcRhQO_BEemhMrLZY20oRw" key="AssociatedSourceCode" value="/ProyectoIntegrador/src/packageProyectoIntegrador/EstadoAprobado.java;385141380/1;/ProyectoIntegrador/src/packageProyectoIntegrador/EstadoCancelado.java;3929572020/1;/ProyectoIntegrador/src/packageProyectoIntegrador/EstadoFinalizado.java;1540297825/1;/ProyectoIntegrador/src/packageProyectoIntegrador/EstadoReserva.java;2168995666/1;/ProyectoIntegrador/src/packageProyectoIntegrador/EstadoSolicitud.java;1827407518/1;/ProyectoIntegrador/src/packageProyectoIntegrador/FiltroFechaEntradaYFechaSalida.java;1910074619/1;/ProyectoIntegrador/src/packageProyectoIntegrador/FiltroXCiudad.java;75640503/1;/ProyectoIntegrador/src/packageProyectoIntegrador/IEmail.java;858759966/1;/ProyectoIntegrador/src/packageProyectoIntegrador/IFiltro.java;1130367442/1;/ProyectoIntegrador/src/packageProyectoIntegrador/Inmueble.java;2142134469/1;/ProyectoIntegrador/src/packageProyectoIntegrador/Publicacion.java;3453580038/1;/ProyectoIntegrador/src/packageProyectoIntegrador/Reserva.java;3381114001/1;/ProyectoIntegrador/src/packageProyectoIntegrador/Servicio.java;2282629700/1;/ProyectoIntegrador/src/packageProyectoIntegrador/Sitio.java;1292006544/1;/ProyectoIntegrador/src/packageProyectoIntegrador/TipoDeInmueble.java;4035963878/1;/ProyectoIntegrador/src/packageProyectoIntegrador/Usuario.java;3475858853/1;/ProyectoIntegrador/srcTest/packageProyectoIntegrador/SitioTestBuscador.java;1227965103/1;/ProyectoIntegrador/srcTest/packageProyectoIntegrador/ReservaTest.java;3014625962/1;/ProyectoIntegrador/srcTest/packageProyectoIntegrador/SitioTest.java;4005247681/1;/ProyectoIntegrador/srcTest/packageProyectoIntegrador/InmuebleTest.java;3763456528/1;/ProyectoIntegrador/srcTest/packageProyectoIntegrador/UsuarioTest.java;1449244921/1;"/>
+      </contents>
+    </eAnnotations>
+    <elementImport xmi:id="_DFfUgO_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+    </elementImport>
+    <elementImport xmi:id="_DFfUge_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#byte"/>
+    </elementImport>
+    <elementImport xmi:id="_DFf7kO_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#char"/>
+    </elementImport>
+    <elementImport xmi:id="_DFf7ke_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </elementImport>
+    <elementImport xmi:id="_DFf7ku_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#float"/>
+    </elementImport>
+    <elementImport xmi:id="_DFf7k-_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+    </elementImport>
+    <elementImport xmi:id="_DFhJsO_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+    </elementImport>
+    <elementImport xmi:id="_DFhJse_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#short"/>
+    </elementImport>
+    <elementImport xmi:id="_DFkNAO_BEemhMrLZY20oRw">
+      <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </elementImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_DF91oO_BEemhMrLZY20oRw" name="packageProyectoIntegrador">
+      <packagedElement xmi:type="uml:Class" xmi:id="_DKr9kO_BEemhMrLZY20oRw" name="EstadoAprobado">
+        <generalization xmi:id="_DV7kQO_BEemhMrLZY20oRw" general="_DK71MO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DdoHsO_BEemhMrLZY20oRw" name="procesarReserva" specification="_DV4g8O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DdpV0O_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>r.setEstado(this);&#xD;
+		//this.email.enviar(r.getInquilino(), &quot;Se ha aprobado su solicitud&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DV4g8O_BEemhMrLZY20oRw" name="procesarReserva" method="_DdoHsO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DV5IAO_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DKz5YO_BEemhMrLZY20oRw" name="EstadoCancelado">
+        <generalization xmi:id="_DV-nkO_BEemhMrLZY20oRw" general="_DK71MO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Dd3_UO_BEemhMrLZY20oRw" name="procesarReserva" specification="_DV8LUO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_Dd4mYO_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>r.setEstado(this);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DV8LUO_BEemhMrLZY20oRw" name="procesarReserva" method="_Dd3_UO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DV8yYO_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DK4K0O_BEemhMrLZY20oRw" name="EstadoFinalizado">
+        <generalization xmi:id="_DWBq4e_BEemhMrLZY20oRw" general="_DK71MO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Dd5NcO_BEemhMrLZY20oRw" name="procesarReserva" specification="_DV_OoO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_Dd5Nce_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>r.setEstado(this);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DV_OoO_BEemhMrLZY20oRw" name="procesarReserva" method="_Dd5NcO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DV_Ooe_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DK71MO_BEemhMrLZY20oRw" name="EstadoReserva" isAbstract="true">
+        <ownedAttribute xmi:id="_DbjrIO_BEemhMrLZY20oRw" name="email" visibility="protected" type="_DLfO0O_BEemhMrLZY20oRw" association="_DfoS0O_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Dd-tAO_BEemhMrLZY20oRw" name="procesarReserva" specification="_DWDgEO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_Dd-tAe_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>// not implemented method&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DWDgEO_BEemhMrLZY20oRw" name="procesarReserva" method="_Dd-tAO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DWDgEe_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DLEYEO_BEemhMrLZY20oRw" name="EstadoSolicitud">
+        <generalization xmi:id="_DWF8Ue_BEemhMrLZY20oRw" general="_DK71MO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Dd_UEO_BEemhMrLZY20oRw" name="procesarReserva" specification="_DWEHIO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_Dd_UEe_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>r.setEstado(this);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DWEHIO_BEemhMrLZY20oRw" name="procesarReserva" method="_Dd_UEO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DWEuMO_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DLHbYO_BEemhMrLZY20oRw" name="FiltroFechaEntradaYFechaSalida">
+        <ownedAttribute xmi:id="_Dbk5Qe_BEemhMrLZY20oRw" name="fechaDeEntrada" type="_DWGjYO_BEemhMrLZY20oRw" association="_DfAAsO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dby7sO_BEemhMrLZY20oRw" name="fechaDeSalida" type="_DWGjYO_BEemhMrLZY20oRw" association="_DfB14O_BEemhMrLZY20oRw"/>
+        <interfaceRealization xmi:id="_DXBJYO_BEemhMrLZY20oRw" client="_DLHbYO_BEemhMrLZY20oRw" supplier="_DLiSIO_BEemhMrLZY20oRw" contract="_DLiSIO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Dd_7IO_BEemhMrLZY20oRw" name="FiltroFechaEntradaYFechaSalida" specification="_DaBaEO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_Dd_7Ie_BEemhMrLZY20oRw" name="fechaDeEntrada" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Dd_7Iu_BEemhMrLZY20oRw" name="fechaDeSalida" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Dd_7I-_BEemhMrLZY20oRw" type="_DLHbYO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.fechaDeEntrada = fechaDeEntrada;&#xD;
+		this.fechaDeSalida = fechaDeSalida;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeAiMO_BEemhMrLZY20oRw" name="aplicarFiltro" specification="_DaCoMO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeAiMe_BEemhMrLZY20oRw" name="publicaciones" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeAiMu_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DeAiM-_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Set&lt;Publicacion> auxSet = new HashSet&lt;Publicacion>();&#xD;
+		&#xD;
+		for(Publicacion p : publicaciones) {&#xD;
+			if(p.hayReservasEnFecha(this.getFechaDeEntrada(),this.getFechaDeSalida())) {&#xD;
+				auxSet.add(p);&#xD;
+			}&#xD;
+			&#xD;
+		}&#xD;
+		return auxSet;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DaBaEO_BEemhMrLZY20oRw" name="FiltroFechaEntradaYFechaSalida" method="_Dd_7IO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DaBaE-_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DaBaFO_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DaBaEe_BEemhMrLZY20oRw" name="fechaDeEntrada" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaBaEu_BEemhMrLZY20oRw" name="fechaDeSalida" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaCBIO_BEemhMrLZY20oRw" type="_DLHbYO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DaCoMO_BEemhMrLZY20oRw" name="aplicarFiltro" method="_DeAiMO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DaCoMe_BEemhMrLZY20oRw" name="publicaciones" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaCoMu_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DaCoM-_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DLRzcO_BEemhMrLZY20oRw" name="FiltroXCiudad">
+        <ownedAttribute xmi:id="_Db3NIO_BEemhMrLZY20oRw" name="cuidadDeseada" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <interfaceRealization xmi:id="_DXJsQO_BEemhMrLZY20oRw" client="_DLRzcO_BEemhMrLZY20oRw" supplier="_DLiSIO_BEemhMrLZY20oRw" contract="_DLiSIO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeBwUO_BEemhMrLZY20oRw" name="FiltroXCiudad" specification="_DLWE4O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeBwUe_BEemhMrLZY20oRw" name="cuidadElegida">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeBwUu_BEemhMrLZY20oRw" type="_DLRzcO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>this.cuidadDeseada = cuidadElegida;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeC-cO_BEemhMrLZY20oRw" name="aplicarFiltro" specification="_DaMZMO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeC-ce_BEemhMrLZY20oRw" name="publicaciones" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeC-cu_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DeC-c-_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Set&lt;Publicacion> auxSet = new HashSet&lt;Publicacion>();&#xD;
+		for(Publicacion p : publicaciones) {&#xD;
+			if(p.getCiudad() == this.getCuidadDeseada()) {&#xD;
+				auxSet.add(p);&#xD;
+			}&#xD;
+		}&#xD;
+		&#xD;
+		return auxSet;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DLWE4O_BEemhMrLZY20oRw" name="FiltroXCiudad" method="_DeBwUO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DLZvQO_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DLZvQe_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DLWE4e_BEemhMrLZY20oRw" name="cuidadElegida">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DLZvQu_BEemhMrLZY20oRw" type="_DLRzcO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DaMZMO_BEemhMrLZY20oRw" name="aplicarFiltro" method="_DeC-cO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DaMZMe_BEemhMrLZY20oRw" name="publicaciones" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaMZMu_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DaNAQO_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_DLfO0O_BEemhMrLZY20oRw" name="IEmail">
+        <ownedOperation xmi:id="_DXMvkO_BEemhMrLZY20oRw" name="enviar">
+          <ownedParameter xmi:id="_DXNWoO_BEemhMrLZY20oRw" name="usr" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DXNWoe_BEemhMrLZY20oRw" name="msg">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Interface" xmi:id="_DLiSIO_BEemhMrLZY20oRw" name="IFiltro" isAbstract="true">
+        <ownedOperation xmi:id="_DaTt8O_BEemhMrLZY20oRw" name="aplicarFiltro">
+          <ownedParameter xmi:id="_DaUVAO_BEemhMrLZY20oRw" name="publicaciones" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaUVAe_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DaUVAu_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DLoYwO_BEemhMrLZY20oRw" name="Inmueble">
+        <ownedAttribute xmi:id="_Db5CUO_BEemhMrLZY20oRw" name="tipoDeInmueble" type="_DNoj4O_BEemhMrLZY20oRw" association="_DfCc8O_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Db5pYO_BEemhMrLZY20oRw" name="capacidad">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Db5pYe_BEemhMrLZY20oRw" name="pais">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Db6QcO_BEemhMrLZY20oRw" name="ciudad">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Db63gO_BEemhMrLZY20oRw" name="direccion">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Db63ge_BEemhMrLZY20oRw" name="servicios" type="_DNcWoO_BEemhMrLZY20oRw" isOrdered="true" association="_DfqvEO_BEemhMrLZY20oRw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Db7ekO_BEemhMrLZY20oRw" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Db8FoO_BEemhMrLZY20oRw" name="precio" type="_DaXYUe_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Db8ssO_BEemhMrLZY20oRw" name="horarioCheckIn" type="_DXZj4O_BEemhMrLZY20oRw" association="_DfDrEO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Db9TwO_BEemhMrLZY20oRw" name="horarioCheckOut" type="_DXZj4O_BEemhMrLZY20oRw" association="_DfFgQO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeEMkO_BEemhMrLZY20oRw" name="Inmueble" specification="_DacQ0O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeEMke_BEemhMrLZY20oRw" name="tipoDeInmueble" type="_DNoj4O_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeEMku_BEemhMrLZY20oRw" name="capacidad">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeEMk-_BEemhMrLZY20oRw" name="pais">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeEMlO_BEemhMrLZY20oRw" name="ciudad">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeEMle_BEemhMrLZY20oRw" name="direccion">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeEMlu_BEemhMrLZY20oRw" name="servicios" type="_DXcnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeEMl-_BEemhMrLZY20oRw" name="precio" type="_DaXYUe_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeEMmO_BEemhMrLZY20oRw" name="horarioCheckIn" type="_DXZj4O_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeEMme_BEemhMrLZY20oRw" name="horarioCheckOut" type="_DXZj4O_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeEMmu_BEemhMrLZY20oRw" type="_DLoYwO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.tipoDeInmueble = tipoDeInmueble;&#xD;
+		this.capacidad = capacidad;&#xD;
+		this.pais = pais;&#xD;
+		this.ciudad = ciudad;&#xD;
+		this.direccion = direccion;&#xD;
+		this.servicios = servicios;&#xD;
+		this.precio = precio;&#xD;
+		this.horarioCheckIn = horarioCheckIn;&#xD;
+		this.horarioCheckOut = horarioCheckOut;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeEMm-_BEemhMrLZY20oRw" name="saberTipoDeInmueble" specification="_DLyw0O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeEMnO_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.getTipoDeInmueble().getTipo();&#xD;
+		</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeEzoO_BEemhMrLZY20oRw" name="poseeEsteServicio" specification="_DXmYMO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeEzoe_BEemhMrLZY20oRw" name="servicio" type="_DNcWoO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeEzou_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.getServicios().contains(servicio);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DLyw0O_BEemhMrLZY20oRw" name="saberTipoDeInmueble" method="_DeEMm-_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DLzX4O_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DXmYMO_BEemhMrLZY20oRw" name="poseeEsteServicio" method="_DeEzoO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DXm_QO_BEemhMrLZY20oRw" name="servicio" type="_DNcWoO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DXm_Qe_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DacQ0O_BEemhMrLZY20oRw" name="Inmueble" method="_DeEMkO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DaeGBe_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DaeGBu_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_Dac34O_BEemhMrLZY20oRw" name="tipoDeInmueble" type="_DNoj4O_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Dac34e_BEemhMrLZY20oRw" name="capacidad">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Dac34u_BEemhMrLZY20oRw" name="pais">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_Dade8O_BEemhMrLZY20oRw" name="ciudad">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DaeGAO_BEemhMrLZY20oRw" name="direccion">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DaeGAe_BEemhMrLZY20oRw" name="servicios" type="_DXcnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaeGAu_BEemhMrLZY20oRw" name="precio" type="_DaXYUe_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaeGA-_BEemhMrLZY20oRw" name="horarioCheckIn" type="_DXZj4O_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaeGBO_BEemhMrLZY20oRw" name="horarioCheckOut" type="_DXZj4O_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DaeGB-_BEemhMrLZY20oRw" type="_DLoYwO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DM4V8O_BEemhMrLZY20oRw" name="Publicacion">
+        <ownedAttribute xmi:id="_DcCMQO_BEemhMrLZY20oRw" name="inmueble" type="_DLoYwO_BEemhMrLZY20oRw" association="_DfGHUO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcCMQe_BEemhMrLZY20oRw" name="propietario" type="_DNrnMO_BEemhMrLZY20oRw" association="_DfGuYe_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcCzUO_BEemhMrLZY20oRw" name="reservas" type="_DND8IO_BEemhMrLZY20oRw" isOrdered="true" isReadOnly="true" association="_DfrWIe_BEemhMrLZY20oRw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DcCzUe_BEemhMrLZY20oRw" value="*"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeFasO_BEemhMrLZY20oRw" name="Publicacion" specification="_DXwJMO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeFase_BEemhMrLZY20oRw" name="inmueble" type="_DLoYwO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeFasu_BEemhMrLZY20oRw" name="propitario" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeFas-_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>this.reservas = new ArrayList&lt;Reserva>(); &#xD;
+		setInmueble(inmueble);&#xD;
+		setPropietario(propitario);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeGBwO_BEemhMrLZY20oRw" name="hayReservasEnFecha" specification="_DakzsO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeGo0O_BEemhMrLZY20oRw" name="fe" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeGo0e_BEemhMrLZY20oRw" name="fs" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeGo0u_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return reservas.stream().anyMatch(rs -> &#xD;
+			(rs.getFechaEntrada().isEqual(fe) || rs.getFechaEntrada().isAfter(fe)) &amp;&amp;&#xD;
+			(rs.getFechaSalida().isEqual(fs) || rs.getFechaSalida().isBefore(fs)) &amp;&amp;&#xD;
+			rs.getEstado() instanceof EstadoAprobado); &#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeH28O_BEemhMrLZY20oRw" name="agregarReserva" specification="_DYB2AO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeH28e_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>if (!hayReservasEnFecha(r.getFechaEntrada(), r.getFechaSalida())) {&#xD;
+			this.reservas.add(r);&#xD;
+		}&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeH28u_BEemhMrLZY20oRw" name="getCiudad" specification="_DM91gO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeH28-_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return this.getInmueble().getCiudad();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DM91gO_BEemhMrLZY20oRw" name="getCiudad" method="_DeH28u_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DM-ckO_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DXwJMO_BEemhMrLZY20oRw" name="Publicacion" method="_DeFasO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DX_Zwe_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DX_Zwu_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DXwJMe_BEemhMrLZY20oRw" name="inmueble" type="_DLoYwO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DX_ZwO_BEemhMrLZY20oRw" name="propitario" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DYBO8O_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DYB2AO_BEemhMrLZY20oRw" name="agregarReserva" method="_DeH28O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DYB2Ae_BEemhMrLZY20oRw" name="r" type="_DND8IO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DakzsO_BEemhMrLZY20oRw" name="hayReservasEnFecha" method="_DeGBwO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DamB0O_BEemhMrLZY20oRw" name="fe" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Damo4O_BEemhMrLZY20oRw" name="fs" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Damo4e_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DND8IO_BEemhMrLZY20oRw" name="Reserva">
+        <ownedAttribute xmi:id="_DcEBcO_BEemhMrLZY20oRw" name="estado" type="_DK71MO_BEemhMrLZY20oRw" association="_DfH8gO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcEogO_BEemhMrLZY20oRw" name="fechaEntrada" type="_DWGjYO_BEemhMrLZY20oRw" association="_DfIjkO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcHEwO_BEemhMrLZY20oRw" name="fechaSalida" type="_DWGjYO_BEemhMrLZY20oRw" association="_DfJKoe_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcKvIO_BEemhMrLZY20oRw" name="inquilino" type="_DNrnMO_BEemhMrLZY20oRw" isReadOnly="true" association="_Dfxcwe_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeIeAO_BEemhMrLZY20oRw" name="Reserva" specification="_DatWkO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeIeAe_BEemhMrLZY20oRw" name="fe" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeIeAu_BEemhMrLZY20oRw" name="fs" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeIeA-_BEemhMrLZY20oRw" name="in" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeIeBO_BEemhMrLZY20oRw" type="_DND8IO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>this.setEstado(new EstadoSolicitud());&#xD;
+		this.setFechaEntrada(fe);&#xD;
+		this.setFechaSalida(fs);&#xD;
+		this.setInquilino(in);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeJFEO_BEemhMrLZY20oRw" name="cambiarEstado" specification="_DYOqUO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeJFEe_BEemhMrLZY20oRw" name="e" type="_DK71MO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>e.procesarReserva(this);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeJFEu_BEemhMrLZY20oRw" name="setInquilino" specification="_DYP4cO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeJFE-_BEemhMrLZY20oRw" name="inquilino" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>this.inquilino = inquilino;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DYOqUO_BEemhMrLZY20oRw" name="cambiarEstado" method="_DeJFEO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DYOqUe_BEemhMrLZY20oRw" name="e" type="_DK71MO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DYP4cO_BEemhMrLZY20oRw" name="setInquilino" visibility="private" method="_DeJFEu_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DYP4ce_BEemhMrLZY20oRw" name="inquilino" type="_DNrnMO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DatWkO_BEemhMrLZY20oRw" name="Reserva" method="_DeIeAO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DauksO_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_Daukse_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_Dat9oO_BEemhMrLZY20oRw" name="fe" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Dat9oe_BEemhMrLZY20oRw" name="fs" type="_DWGjYO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Dat9ou_BEemhMrLZY20oRw" name="in" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Dauksu_BEemhMrLZY20oRw" type="_DND8IO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DNcWoO_BEemhMrLZY20oRw" name="Servicio">
+        <ownedAttribute xmi:id="_DcL9QO_BEemhMrLZY20oRw" name="tipoServicio">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeJsIO_BEemhMrLZY20oRw" name="getTipoServicio" specification="_DNdkwO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeJsIe_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>return tipoServicio;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeKTMO_BEemhMrLZY20oRw" name="Servicio" specification="_DNeL0O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeKTMe_BEemhMrLZY20oRw" name="tipoServicio">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeKTMu_BEemhMrLZY20oRw" type="_DNcWoO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.tipoServicio = tipoServicio;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DNdkwO_BEemhMrLZY20oRw" name="getTipoServicio" method="_DeJsIO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DNdkwe_BEemhMrLZY20oRw" direction="return">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DNeL0O_BEemhMrLZY20oRw" name="Servicio" method="_DeKTMO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DNey4e_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DNey4u_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DNey4O_BEemhMrLZY20oRw" name="tipoServicio">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DNey4-_BEemhMrLZY20oRw" type="_DNcWoO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DNgoEO_BEemhMrLZY20oRw" name="Sitio">
+        <ownedAttribute xmi:id="_DcNLYO_BEemhMrLZY20oRw" name="usuarios" type="_DNrnMO_BEemhMrLZY20oRw" isReadOnly="true" association="_DfzR8e_BEemhMrLZY20oRw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DcNycO_BEemhMrLZY20oRw" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_DcOZgO_BEemhMrLZY20oRw" name="inmuebles" type="_DLoYwO_BEemhMrLZY20oRw" isReadOnly="true" association="_Df0gEe_BEemhMrLZY20oRw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DcOZge_BEemhMrLZY20oRw" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_DcPAkO_BEemhMrLZY20oRw" name="publicaciones" type="_DM4V8O_BEemhMrLZY20oRw" isReadOnly="true" association="_Df1uMO_BEemhMrLZY20oRw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DcPnoO_BEemhMrLZY20oRw" value="*"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeK6QO_BEemhMrLZY20oRw" name="Sitio" specification="_DNidQO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeK6Qe_BEemhMrLZY20oRw" type="_DNgoEO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.inmuebles = new HashSet&lt;Inmueble>();&#xD;
+		this.publicaciones = new HashSet&lt;Publicacion>();&#xD;
+		this.usuarios = new HashSet&lt;Usuario>();&#xD;
+&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeLhUO_BEemhMrLZY20oRw" name="publicar" specification="_DYV_EO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeLhUe_BEemhMrLZY20oRw" name="publi" type="_DM4V8O_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>this.getPublicaciones().add(publi);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeLhUu_BEemhMrLZY20oRw" name="registrarInmueble" specification="_DYcFsO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeLhU-_BEemhMrLZY20oRw" name="inmueble" type="_DLoYwO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>this.getInmuebles().add(inmueble);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeMIYO_BEemhMrLZY20oRw" name="registrarUsuario" specification="_DYdT0O_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeMIYe_BEemhMrLZY20oRw" name="usuario" type="_DNrnMO_BEemhMrLZY20oRw"/>
+          <language>java</language>
+          <body>this.getUsuarios().add(usuario);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeMvcO_BEemhMrLZY20oRw" name="buscarPublicaciones" specification="_Da2ggO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeMvce_BEemhMrLZY20oRw" name="filtros" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_DeMvcu_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_DeMvc-_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+          <language>java</language>
+          <body>Set&lt;Publicacion> publicacionesFiltradas = new HashSet&lt;Publicacion>();&#xD;
+		for(IFiltro f : filtros) {&#xD;
+			publicacionesFiltradas = f.aplicarFiltro(this.getPublicaciones());&#xD;
+		}&#xD;
+		&#xD;
+		return publicacionesFiltradas;&#xD;
+			&#xD;
+		</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DNidQO_BEemhMrLZY20oRw" name="Sitio" method="_DeK6QO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DNidQe_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DNidQu_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DNjEUO_BEemhMrLZY20oRw" type="_DNgoEO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DYV_EO_BEemhMrLZY20oRw" name="publicar" method="_DeLhUO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DYV_Ee_BEemhMrLZY20oRw" name="publi" type="_DM4V8O_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DYcFsO_BEemhMrLZY20oRw" name="registrarInmueble" method="_DeLhUu_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DYcswO_BEemhMrLZY20oRw" name="inmueble" type="_DLoYwO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_DYdT0O_BEemhMrLZY20oRw" name="registrarUsuario" method="_DeMIYO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DYdT0e_BEemhMrLZY20oRw" name="usuario" type="_DNrnMO_BEemhMrLZY20oRw"/>
+        </ownedOperation>
+        <ownedOperation xmi:id="_Da2ggO_BEemhMrLZY20oRw" name="buscarPublicaciones" method="_DeMvcO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_Da2gge_BEemhMrLZY20oRw" name="filtros" type="_DWtAUO_BEemhMrLZY20oRw"/>
+          <ownedParameter xmi:id="_Da3HkO_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return">
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Da3Hke_BEemhMrLZY20oRw" value="*"/>
+          </ownedParameter>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DNoj4O_BEemhMrLZY20oRw" name="TipoDeInmueble">
+        <ownedAttribute xmi:id="_DcjJoO_BEemhMrLZY20oRw" name="tipo" isReadOnly="true">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeN9kO_BEemhMrLZY20oRw" name="TipoDeInmueble" specification="_DNpyAO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeN9ke_BEemhMrLZY20oRw" name="tipo">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeN9ku_BEemhMrLZY20oRw" type="_DNoj4O_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.tipo = tipo;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DNpyAO_BEemhMrLZY20oRw" name="TipoDeInmueble" method="_DeN9kO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DNpyAu_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DNpyA-_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DNpyAe_BEemhMrLZY20oRw" name="tipo">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DNqZEO_BEemhMrLZY20oRw" type="_DNoj4O_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DNrnMO_BEemhMrLZY20oRw" name="Usuario">
+        <ownedAttribute xmi:id="_DcjwsO_BEemhMrLZY20oRw" name="nombre">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_DckXwO_BEemhMrLZY20oRw" name="apellido">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Dck-0O_BEemhMrLZY20oRw" name="mail">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_DcmM8O_BEemhMrLZY20oRw" name="numero">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+        </ownedAttribute>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeOkoO_BEemhMrLZY20oRw" name="Usuario" specification="_DNuqgO_BEemhMrLZY20oRw">
+          <ownedParameter xmi:id="_DeOkoe_BEemhMrLZY20oRw" name="nombre">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeOkou_BEemhMrLZY20oRw" name="apellido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeOko-_BEemhMrLZY20oRw" name="mail">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeOkpO_BEemhMrLZY20oRw" name="numero">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DeOkpe_BEemhMrLZY20oRw" type="_DNrnMO_BEemhMrLZY20oRw" direction="return"/>
+          <language>java</language>
+          <body>super();&#xD;
+		this.nombre = nombre;&#xD;
+		this.apellido = apellido;&#xD;
+		this.mail = mail;&#xD;
+		this.numero = numero;&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DNuqgO_BEemhMrLZY20oRw" name="Usuario" method="_DeOkoO_BEemhMrLZY20oRw">
+          <eAnnotations xmi:id="_DNv4ou_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+            <details xmi:id="_DNv4o-_BEemhMrLZY20oRw" key="create"/>
+          </eAnnotations>
+          <ownedParameter xmi:id="_DNvRkO_BEemhMrLZY20oRw" name="nombre">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DNvRke_BEemhMrLZY20oRw" name="apellido">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DNv4oO_BEemhMrLZY20oRw" name="mail">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DNv4oe_BEemhMrLZY20oRw" name="numero">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+          </ownedParameter>
+          <ownedParameter xmi:id="_DNv4pO_BEemhMrLZY20oRw" type="_DNrnMO_BEemhMrLZY20oRw" direction="return"/>
+        </ownedOperation>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DNy78O_BEemhMrLZY20oRw" name="SitioTestBuscador" visibility="package">
+        <eAnnotations xmi:id="_DOEowO_BEemhMrLZY20oRw" source="http://ns.yatta.de/umllab">
+          <contents xmi:type="ecore:EAnnotation" xmi:id="_DOEowe_BEemhMrLZY20oRw" source="codegen">
+            <details xmi:id="_DOEowu_BEemhMrLZY20oRw" key="codegenDirectory" value="/ProyectoIntegrador/srcTest"/>
+          </contents>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_DcnbEO_BEemhMrLZY20oRw" name="sitioWeb" type="_DNgoEO_BEemhMrLZY20oRw" association="_Df28Ue_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcopMe_BEemhMrLZY20oRw" name="fechas" type="_DLHbYO_BEemhMrLZY20oRw" association="_Df4Kce_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dcp3Ue_BEemhMrLZY20oRw" name="cuidad" type="_DLRzcO_BEemhMrLZY20oRw" association="_Df5Yke_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DePLsO_BEemhMrLZY20oRw" name="setUp" specification="_DOXjsO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>cuidad = new FiltroXCiudad(&quot;Buenos Aires&quot;);&#xD;
+		//fechas = new FiltroFechaEntradaYFechaSalida();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DePywO_BEemhMrLZY20oRw" name="test" specification="_DOdDQO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>fail(&quot;Not yet implemented&quot;);&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DOXjsO_BEemhMrLZY20oRw" name="setUp" visibility="package" method="_DePLsO_BEemhMrLZY20oRw" raisedException="_Da7ZAO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DOdDQO_BEemhMrLZY20oRw" name="test" visibility="package" method="_DePywO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DOii0O_BEemhMrLZY20oRw" name="ReservaTest" visibility="package">
+        <eAnnotations xmi:id="_DOjJ4O_BEemhMrLZY20oRw" source="http://ns.yatta.de/umllab">
+          <contents xmi:type="ecore:EAnnotation" xmi:id="_DOjJ4e_BEemhMrLZY20oRw" source="codegen">
+            <details xmi:id="_DOjJ4u_BEemhMrLZY20oRw" key="codegenDirectory" value="/ProyectoIntegrador/srcTest"/>
+          </contents>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_DcrFcO_BEemhMrLZY20oRw" name="site" visibility="package" type="_DNgoEO_BEemhMrLZY20oRw" association="_Df9qAO_BEemhMrLZY20oRw">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_DcrsgO_BEemhMrLZY20oRw" value="new Sitio()"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Dcs6oe_BEemhMrLZY20oRw" name="p1" visibility="package" type="_DM4V8O_BEemhMrLZY20oRw" association="_Df_fMO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dcthse_BEemhMrLZY20oRw" name="tInmueble" visibility="package" type="_DNoj4O_BEemhMrLZY20oRw" association="_DgB7cO_BEemhMrLZY20oRw">
+          <defaultValue xmi:type="uml:LiteralString" xmi:id="_DcuIwO_BEemhMrLZY20oRw" value="new TipoDeInmueble(&quot;Casa&quot;)"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_DcuIwu_BEemhMrLZY20oRw" name="in" visibility="package" type="_DLoYwO_BEemhMrLZY20oRw" association="_DgDJke_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeQZ0O_BEemhMrLZY20oRw" name="setUp" specification="_DOk_EO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>in = new Inmueble(tInmueble, 50, &quot;Arg&quot;, &quot;BA&quot;, &quot;Sonza 12&quot;, new ArrayList&lt;Servicio>(), 500.0, LocalTime.now(), LocalTime.now());&#xD;
+		&#xD;
+		Usuario prop = new Usuario(&quot;&quot;,&quot;&quot;,&quot;&quot;, 1);&#xD;
+		&#xD;
+		p1 = new Publicacion(in, prop); // agrego inmueble y propitario&#xD;
+		&#xD;
+		site.publicar(p1);&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeRA4O_BEemhMrLZY20oRw" name="agregarReserva" specification="_DOoCYO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>LocalDate fechaEntrada = LocalDate.now();&#xD;
+&#xD;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;d/MM/yyyy&quot;);&#xD;
+		LocalDate fechaSalida = LocalDate.parse(&quot;24/10/2019&quot;, formatter);&#xD;
+		&#xD;
+		Usuario inq = new Usuario(&quot;&quot;,&quot;&quot;,&quot;&quot;, 1);&#xD;
+		Reserva res = new Reserva(fechaEntrada, fechaSalida, inq);&#xD;
+		&#xD;
+		&#xD;
+		p1.agregarReserva(res);&#xD;
+		assertEquals(1, p1.getReservas().size());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeRA4e_BEemhMrLZY20oRw" name="reservaNoValida" specification="_DOp3ku_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>LocalDate fechaEntrada = LocalDate.now();&#xD;
+		&#xD;
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;d/MM/yyyy&quot;);&#xD;
+		LocalDate fechaSalida = LocalDate.parse(&quot;24/10/2019&quot;, formatter);&#xD;
+		&#xD;
+		Usuario inq = new Usuario(&quot;&quot;,&quot;&quot;,&quot;&quot;, 1);&#xD;
+		Reserva res = new Reserva(fechaEntrada, fechaSalida, inq);&#xD;
+		&#xD;
+		res.cambiarEstado(new EstadoAprobado());&#xD;
+		p1.agregarReserva(res);&#xD;
+		&#xD;
+		&#xD;
+		Usuario inq2 = new Usuario(&quot;&quot;,&quot;&quot;,&quot;&quot;, 1);&#xD;
+		Reserva res2 = new Reserva(fechaEntrada, fechaSalida, inq2); // intentar ingresar reserva misma fecha con una reserva ya aprobaba&#xD;
+		&#xD;
+		assertEquals(true, p1.hayReservasEnFecha(res2.getFechaEntrada(), res2.getFechaSalida()));&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeRA4u_BEemhMrLZY20oRw" name="reservaValida" specification="_DOv-Mu_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;d/MM/yyyy&quot;);&#xD;
+		&#xD;
+		LocalDate now = LocalDate.now();&#xD;
+		LocalDate later = LocalDate.parse(&quot;24/10/2019&quot;, formatter);&#xD;
+		&#xD;
+		Usuario inq = new Usuario(&quot;&quot;,&quot;&quot;,&quot;&quot;, 1);&#xD;
+		Reserva res = new Reserva(now, later, inq);&#xD;
+		res.cambiarEstado(new EstadoAprobado());&#xD;
+		p1.agregarReserva(res);&#xD;
+		&#xD;
+		LocalDate nowReserva3 = LocalDate.parse(&quot;20/10/2020&quot;, formatter);&#xD;
+		LocalDate laterReserva3 = LocalDate.parse(&quot;30/10/2020&quot;, formatter);&#xD;
+		&#xD;
+		Usuario inq2 = new Usuario(&quot;&quot;,&quot;&quot;,&quot;&quot;, 1);&#xD;
+		Reserva res3 = new Reserva(nowReserva3, laterReserva3, inq2); // no existe reserva previamente agregada en esta fecha&#xD;
+		&#xD;
+		assertEquals(false, p1.hayReservasEnFecha(res3.getFechaEntrada(), res3.getFechaSalida()));&#xD;
+		&#xD;
+		p1.agregarReserva(res3);&#xD;
+		&#xD;
+		assertEquals(2, p1.getReservas().size());&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DOk_EO_BEemhMrLZY20oRw" name="setUp" visibility="package" method="_DeQZ0O_BEemhMrLZY20oRw" raisedException="_Da7ZAO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DOoCYO_BEemhMrLZY20oRw" name="agregarReserva" visibility="package" method="_DeRA4O_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DOp3ku_BEemhMrLZY20oRw" name="reservaNoValida" visibility="package" method="_DeRA4e_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DOv-Mu_BEemhMrLZY20oRw" name="reservaValida" visibility="package" method="_DeRA4u_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DOzoku_BEemhMrLZY20oRw" name="aprobarReserva" visibility="package"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DO7kYO_BEemhMrLZY20oRw" name="SitioTest" visibility="package">
+        <eAnnotations xmi:id="_DO8LcO_BEemhMrLZY20oRw" source="http://ns.yatta.de/umllab">
+          <contents xmi:type="ecore:EAnnotation" xmi:id="_DO8ygO_BEemhMrLZY20oRw" source="codegen">
+            <details xmi:id="_DO9ZkO_BEemhMrLZY20oRw" key="codegenDirectory" value="/ProyectoIntegrador/srcTest"/>
+          </contents>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_Dcv98O_BEemhMrLZY20oRw" name="sitioWeb" type="_DNgoEO_BEemhMrLZY20oRw" association="_DgFl0O_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcwlAe_BEemhMrLZY20oRw" name="inmuebleDummy" type="_DLoYwO_BEemhMrLZY20oRw" association="_DgICEO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DcyaMO_BEemhMrLZY20oRw" name="usuarioDummy" type="_DNrnMO_BEemhMrLZY20oRw" association="_DgJ3QO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_DczBQe_BEemhMrLZY20oRw" name="publicacionDummy" type="_DM4V8O_BEemhMrLZY20oRw" association="_DgLFYO_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeRn8O_BEemhMrLZY20oRw" name="setUp" specification="_DO-nsO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>sitioWeb = new Sitio();&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeRn8e_BEemhMrLZY20oRw" name="testPoderAgregarInmueble" specification="_DPBrAO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>inmuebleDummy = mock (Inmueble.class);&#xD;
+		assertEquals(true, sitioWeb.getInmuebles().isEmpty());&#xD;
+&#xD;
+		sitioWeb.registrarInmueble(inmuebleDummy);&#xD;
+		assertEquals(1, sitioWeb.getInmuebles().size());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeS2EO_BEemhMrLZY20oRw" name="testPoderAgregarUnUsuarioAlSitio" specification="_DPDgMe_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>usuarioDummy = mock(Usuario.class);&#xD;
+		assertEquals(true, sitioWeb.getUsuarios().isEmpty());&#xD;
+		sitioWeb.registrarUsuario(usuarioDummy);&#xD;
+		assertEquals(1,sitioWeb.getUsuarios().size());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeS2Ee_BEemhMrLZY20oRw" name="testPodePublicarInmueble" specification="_DPFVYO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>publicacionDummy = mock (Publicacion.class);&#xD;
+		assertEquals(true, sitioWeb.getPublicaciones().isEmpty());&#xD;
+		sitioWeb.publicar(publicacionDummy);&#xD;
+		assertEquals(1, sitioWeb.getPublicaciones().size());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DO-nsO_BEemhMrLZY20oRw" name="setUp" visibility="package" method="_DeRn8O_BEemhMrLZY20oRw" raisedException="_Da7ZAO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPBrAO_BEemhMrLZY20oRw" name="testPoderAgregarInmueble" visibility="package" method="_DeRn8e_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPDgMe_BEemhMrLZY20oRw" name="testPoderAgregarUnUsuarioAlSitio" visibility="package" method="_DeS2EO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPFVYO_BEemhMrLZY20oRw" name="testPodePublicarInmueble" visibility="package" method="_DeS2Ee_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DPOfUO_BEemhMrLZY20oRw" name="InmuebleTest" visibility="package">
+        <eAnnotations xmi:id="_DPQUgO_BEemhMrLZY20oRw" source="http://ns.yatta.de/umllab">
+          <contents xmi:type="ecore:EAnnotation" xmi:id="_DPQUge_BEemhMrLZY20oRw" source="codegen">
+            <details xmi:id="_DPQUgu_BEemhMrLZY20oRw" key="codegenDirectory" value="/ProyectoIntegrador/srcTest"/>
+          </contents>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_Dc0PYO_BEemhMrLZY20oRw" name="inmuebleDePrueba" type="_DLoYwO_BEemhMrLZY20oRw" association="_DgM6kO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dc1dge_BEemhMrLZY20oRw" name="departamento" type="_DNoj4O_BEemhMrLZY20oRw" association="_DgOvwO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dc2roO_BEemhMrLZY20oRw" name="agua" type="_DNcWoO_BEemhMrLZY20oRw" association="_DgPW0e_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dc3Sse_BEemhMrLZY20oRw" name="luz" type="_DNcWoO_BEemhMrLZY20oRw" association="_DgQk8e_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dc5H4O_BEemhMrLZY20oRw" name="internet" type="_DNcWoO_BEemhMrLZY20oRw" association="_DgSaIO_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dc5u8e_BEemhMrLZY20oRw" name="servicios" type="_DNcWoO_BEemhMrLZY20oRw" isOrdered="true" association="_DgTBMe_BEemhMrLZY20oRw">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dc5u8u_BEemhMrLZY20oRw" value="*"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:id="_Dc6WAe_BEemhMrLZY20oRw" name="diezAM" type="_DXZj4O_BEemhMrLZY20oRw" association="_DgUPUe_BEemhMrLZY20oRw"/>
+        <ownedAttribute xmi:id="_Dc8LMO_BEemhMrLZY20oRw" name="trecePM" type="_DXZj4O_BEemhMrLZY20oRw" association="_DgWEge_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeTdIO_BEemhMrLZY20oRw" name="setUp" specification="_DPRioO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>departamento = mock (TipoDeInmueble.class);&#xD;
+			when(departamento.getTipo()).thenReturn(&quot;Departamento&quot;);&#xD;
+	&#xD;
+		agua = mock (Servicio.class);&#xD;
+			when (agua.getTipoServicio()).thenReturn(&quot;Agua&quot;);&#xD;
+			&#xD;
+		luz = mock (Servicio.class);&#xD;
+			when (luz.getTipoServicio()).thenReturn(&quot;Luz&quot;);&#xD;
+		&#xD;
+		internet = mock (Servicio.class);&#xD;
+			when (internet.getTipoServicio()).thenReturn(&quot;Internet&quot;);&#xD;
+		&#xD;
+		servicios = new ArrayList&lt;Servicio>(Arrays.asList(internet,agua,luz));&#xD;
+&#xD;
+		&#xD;
+		inmuebleDePrueba = new Inmueble&#xD;
+				(departamento, 3, &quot;Argentina&quot;, &quot;Buenos Aires&quot;, &quot;Calle Argentino Roca 4795&quot;, &#xD;
+						servicios , 12000.00, diezAM, trecePM );&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeUEMO_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleTipoDeInmueble" specification="_DPWbIO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;Departamento&quot;, inmuebleDePrueba.saberTipoDeInmueble());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeUrQO_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleCapacidad" specification="_DPXpQu_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(3, inmuebleDePrueba.getCapacidad());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeUrQe_BEemhMrLZY20oRw" name="testLosGettersDeUnInmueblePais" specification="_DPY3Ye_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;Argentina&quot;, inmuebleDePrueba.getPais());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeUrQu_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleCiudad" specification="_DPaFge_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;Buenos Aires&quot;, inmuebleDePrueba.getCiudad());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeUrQ-_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleDireccion" specification="_DPask-_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;Calle Argentino Roca 4795&quot;, inmuebleDePrueba.getDireccion());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeVSUO_BEemhMrLZY20oRw" name="testServicios" specification="_DPdI0e_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertTrue(inmuebleDePrueba.poseeEsteServicio(agua));&#xD;
+		assertTrue(inmuebleDePrueba.poseeEsteServicio(internet));&#xD;
+		assertTrue(inmuebleDePrueba.poseeEsteServicio(luz));&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeVSUe_BEemhMrLZY20oRw" name="testPrecio" specification="_DPeW8O_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(12000.00, inmuebleDePrueba.getPrecio());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DPRioO_BEemhMrLZY20oRw" name="setUp" visibility="package" method="_DeTdIO_BEemhMrLZY20oRw" raisedException="_Da7ZAO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPT-4O_BEemhMrLZY20oRw" name="test" visibility="package"/>
+        <ownedOperation xmi:id="_DPWbIO_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleTipoDeInmueble" visibility="package" method="_DeUEMO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPXpQu_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleCapacidad" visibility="package" method="_DeUrQO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPY3Ye_BEemhMrLZY20oRw" name="testLosGettersDeUnInmueblePais" visibility="package" method="_DeUrQe_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPaFge_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleCiudad" visibility="package" method="_DeUrQu_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPask-_BEemhMrLZY20oRw" name="testLosGettersDeUnInmuebleDireccion" visibility="package" method="_DeUrQ-_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPdI0e_BEemhMrLZY20oRw" name="testServicios" visibility="package" method="_DeVSUO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPeW8O_BEemhMrLZY20oRw" name="testPrecio" visibility="package" method="_DeVSUe_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DPgMIu_BEemhMrLZY20oRw" name="testGetterHoraCheckIn" visibility="package"/>
+        <ownedOperation xmi:id="_DPiBUu_BEemhMrLZY20oRw" name="testGetterHoraCheckOut" visibility="package"/>
+        <ownedOperation xmi:id="_DPtAcu_BEemhMrLZY20oRw" name="testSettersDeUnInmueble" visibility="package"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_DP1jUO_BEemhMrLZY20oRw" name="UsuarioTest" visibility="package">
+        <eAnnotations xmi:id="_DP1jUe_BEemhMrLZY20oRw" source="http://ns.yatta.de/umllab">
+          <contents xmi:type="ecore:EAnnotation" xmi:id="_DP1jUu_BEemhMrLZY20oRw" source="codegen">
+            <details xmi:id="_DP1jU-_BEemhMrLZY20oRw" key="codegenDirectory" value="/ProyectoIntegrador/srcTest"/>
+          </contents>
+        </eAnnotations>
+        <ownedAttribute xmi:id="_DdXB8O_BEemhMrLZY20oRw" name="usuarioPrueba" type="_DNrnMO_BEemhMrLZY20oRw" association="_DgXSoe_BEemhMrLZY20oRw"/>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeWgcO_BEemhMrLZY20oRw" name="setUp" specification="_DP2KYO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>usuarioPrueba = new Usuario(&quot;Nicolas&quot;,&quot;Tancredi&quot;,&quot;prueba@hotmail.com&quot;, 1135234355);&#xD;
+		&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeWgce_BEemhMrLZY20oRw" name="testNombre" specification="_DP4moO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;Nicolas&quot;,usuarioPrueba.getNombre());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_DeWgcu_BEemhMrLZY20oRw" name="testApellido" specification="_DP6b0O_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;Tancredi&quot;,usuarioPrueba.getApellido());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Deax4O_BEemhMrLZY20oRw" name="testMail" specification="_DP8RAO_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(&quot;prueba@hotmail.com&quot;,usuarioPrueba.getMail());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_Deax4e_BEemhMrLZY20oRw" name="testNumero" specification="_DP9fIu_BEemhMrLZY20oRw">
+          <language>java</language>
+          <body>assertEquals(1135234355,usuarioPrueba.getNumero());&#xD;
+	</body>
+        </ownedBehavior>
+        <ownedOperation xmi:id="_DP2KYO_BEemhMrLZY20oRw" name="setUp" visibility="package" method="_DeWgcO_BEemhMrLZY20oRw" raisedException="_Da7ZAO_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DP4moO_BEemhMrLZY20oRw" name="testNombre" visibility="package" method="_DeWgce_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DP6b0O_BEemhMrLZY20oRw" name="testApellido" visibility="package" method="_DeWgcu_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DP8RAO_BEemhMrLZY20oRw" name="testMail" visibility="package" method="_Deax4O_BEemhMrLZY20oRw"/>
+        <ownedOperation xmi:id="_DP9fIu_BEemhMrLZY20oRw" name="testNumero" visibility="package" method="_Deax4e_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfAAsO_BEemhMrLZY20oRw" name="" memberEnd="_Dbk5Qe_BEemhMrLZY20oRw _DfAAse_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfAAse_BEemhMrLZY20oRw" name="" type="_DLHbYO_BEemhMrLZY20oRw" association="_DfAAsO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfB14O_BEemhMrLZY20oRw" name="" memberEnd="_Dby7sO_BEemhMrLZY20oRw _DfB14e_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfB14e_BEemhMrLZY20oRw" name="" type="_DLHbYO_BEemhMrLZY20oRw" association="_DfB14O_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfCc8O_BEemhMrLZY20oRw" name="" memberEnd="_Db5CUO_BEemhMrLZY20oRw _DfDEAO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfDEAO_BEemhMrLZY20oRw" name="" type="_DLoYwO_BEemhMrLZY20oRw" association="_DfCc8O_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfDrEO_BEemhMrLZY20oRw" name="" memberEnd="_Db8ssO_BEemhMrLZY20oRw _DfDrEe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfDrEe_BEemhMrLZY20oRw" name="" type="_DLoYwO_BEemhMrLZY20oRw" association="_DfDrEO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfFgQO_BEemhMrLZY20oRw" name="" memberEnd="_Db9TwO_BEemhMrLZY20oRw _DfFgQe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfFgQe_BEemhMrLZY20oRw" name="" type="_DLoYwO_BEemhMrLZY20oRw" association="_DfFgQO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfGHUO_BEemhMrLZY20oRw" name="" memberEnd="_DcCMQO_BEemhMrLZY20oRw _DfGuYO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfGuYO_BEemhMrLZY20oRw" name="" type="_DM4V8O_BEemhMrLZY20oRw" association="_DfGHUO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfGuYe_BEemhMrLZY20oRw" name="" memberEnd="_DcCMQe_BEemhMrLZY20oRw _DfHVcO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfHVcO_BEemhMrLZY20oRw" name="" type="_DM4V8O_BEemhMrLZY20oRw" association="_DfGuYe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfH8gO_BEemhMrLZY20oRw" name="" memberEnd="_DcEBcO_BEemhMrLZY20oRw _DfH8ge_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfH8ge_BEemhMrLZY20oRw" name="" type="_DND8IO_BEemhMrLZY20oRw" association="_DfH8gO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfIjkO_BEemhMrLZY20oRw" name="" memberEnd="_DcEogO_BEemhMrLZY20oRw _DfJKoO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfJKoO_BEemhMrLZY20oRw" name="" type="_DND8IO_BEemhMrLZY20oRw" association="_DfIjkO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfJKoe_BEemhMrLZY20oRw" name="" memberEnd="_DcHEwO_BEemhMrLZY20oRw _DfJxsO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfJxsO_BEemhMrLZY20oRw" name="" type="_DND8IO_BEemhMrLZY20oRw" association="_DfJKoe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfoS0O_BEemhMrLZY20oRw" name="" memberEnd="_DfoS0e_BEemhMrLZY20oRw _DbjrIO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfoS0e_BEemhMrLZY20oRw" name="" type="_DK71MO_BEemhMrLZY20oRw" association="_DfoS0O_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfqvEO_BEemhMrLZY20oRw" name="" memberEnd="_DfqvEe_BEemhMrLZY20oRw _Db63ge_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfqvEe_BEemhMrLZY20oRw" name="" type="_DLoYwO_BEemhMrLZY20oRw" association="_DfqvEO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfrWIe_BEemhMrLZY20oRw" name="" memberEnd="_Dfr9MO_BEemhMrLZY20oRw _DcCzUO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Dfr9MO_BEemhMrLZY20oRw" name="" type="_DM4V8O_BEemhMrLZY20oRw" association="_DfrWIe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Dfxcwe_BEemhMrLZY20oRw" name="" memberEnd="_Dfxcwu_BEemhMrLZY20oRw _DcKvIO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Dfxcwu_BEemhMrLZY20oRw" name="" type="_DND8IO_BEemhMrLZY20oRw" association="_Dfxcwe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DfzR8e_BEemhMrLZY20oRw" name="" memberEnd="_DfzR8u_BEemhMrLZY20oRw _DcNLYO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DfzR8u_BEemhMrLZY20oRw" name="" type="_DNgoEO_BEemhMrLZY20oRw" association="_DfzR8e_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df0gEe_BEemhMrLZY20oRw" name="" memberEnd="_Df0gEu_BEemhMrLZY20oRw _DcOZgO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df0gEu_BEemhMrLZY20oRw" name="" type="_DNgoEO_BEemhMrLZY20oRw" association="_Df0gEe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df1uMO_BEemhMrLZY20oRw" name="" memberEnd="_Df1uMe_BEemhMrLZY20oRw _DcPAkO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df1uMe_BEemhMrLZY20oRw" name="" type="_DNgoEO_BEemhMrLZY20oRw" association="_Df1uMO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df28Ue_BEemhMrLZY20oRw" name="" memberEnd="_Df28Uu_BEemhMrLZY20oRw _DcnbEO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df28Uu_BEemhMrLZY20oRw" name="" type="_DNy78O_BEemhMrLZY20oRw" association="_Df28Ue_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df4Kce_BEemhMrLZY20oRw" name="" memberEnd="_Df4Kcu_BEemhMrLZY20oRw _DcopMe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df4Kcu_BEemhMrLZY20oRw" name="" type="_DNy78O_BEemhMrLZY20oRw" association="_Df4Kce_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df5Yke_BEemhMrLZY20oRw" name="" memberEnd="_Df5Yku_BEemhMrLZY20oRw _Dcp3Ue_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df5Yku_BEemhMrLZY20oRw" name="" type="_DNy78O_BEemhMrLZY20oRw" association="_Df5Yke_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df9qAO_BEemhMrLZY20oRw" name="" memberEnd="_Df9qAe_BEemhMrLZY20oRw _DcrFcO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df9qAe_BEemhMrLZY20oRw" name="" type="_DOii0O_BEemhMrLZY20oRw" association="_Df9qAO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_Df_fMO_BEemhMrLZY20oRw" name="" memberEnd="_Df_fMe_BEemhMrLZY20oRw _Dcs6oe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_Df_fMe_BEemhMrLZY20oRw" name="" type="_DOii0O_BEemhMrLZY20oRw" association="_Df_fMO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgB7cO_BEemhMrLZY20oRw" name="" memberEnd="_DgB7ce_BEemhMrLZY20oRw _Dcthse_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgB7ce_BEemhMrLZY20oRw" name="" type="_DOii0O_BEemhMrLZY20oRw" association="_DgB7cO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgDJke_BEemhMrLZY20oRw" name="" memberEnd="_DgDJku_BEemhMrLZY20oRw _DcuIwu_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgDJku_BEemhMrLZY20oRw" name="" type="_DOii0O_BEemhMrLZY20oRw" association="_DgDJke_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgFl0O_BEemhMrLZY20oRw" name="" memberEnd="_DgFl0e_BEemhMrLZY20oRw _Dcv98O_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgFl0e_BEemhMrLZY20oRw" name="" type="_DO7kYO_BEemhMrLZY20oRw" association="_DgFl0O_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgICEO_BEemhMrLZY20oRw" name="" memberEnd="_DgICEe_BEemhMrLZY20oRw _DcwlAe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgICEe_BEemhMrLZY20oRw" name="" type="_DO7kYO_BEemhMrLZY20oRw" association="_DgICEO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgJ3QO_BEemhMrLZY20oRw" name="" memberEnd="_DgJ3Qe_BEemhMrLZY20oRw _DcyaMO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgJ3Qe_BEemhMrLZY20oRw" name="" type="_DO7kYO_BEemhMrLZY20oRw" association="_DgJ3QO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgLFYO_BEemhMrLZY20oRw" name="" memberEnd="_DgLFYe_BEemhMrLZY20oRw _DczBQe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgLFYe_BEemhMrLZY20oRw" name="" type="_DO7kYO_BEemhMrLZY20oRw" association="_DgLFYO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgM6kO_BEemhMrLZY20oRw" name="" memberEnd="_DgM6ke_BEemhMrLZY20oRw _Dc0PYO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgM6ke_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgM6kO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgOvwO_BEemhMrLZY20oRw" name="" memberEnd="_DgOvwe_BEemhMrLZY20oRw _Dc1dge_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgOvwe_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgOvwO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgPW0e_BEemhMrLZY20oRw" name="" memberEnd="_DgPW0u_BEemhMrLZY20oRw _Dc2roO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgPW0u_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgPW0e_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgQk8e_BEemhMrLZY20oRw" name="" memberEnd="_DgQk8u_BEemhMrLZY20oRw _Dc3Sse_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgQk8u_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgQk8e_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgSaIO_BEemhMrLZY20oRw" name="" memberEnd="_DgSaIe_BEemhMrLZY20oRw _Dc5H4O_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgSaIe_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgSaIO_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgTBMe_BEemhMrLZY20oRw" name="" memberEnd="_DgTBMu_BEemhMrLZY20oRw _Dc5u8e_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgTBMu_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgTBMe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgUPUe_BEemhMrLZY20oRw" name="" memberEnd="_DgUPUu_BEemhMrLZY20oRw _Dc6WAe_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgUPUu_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgUPUe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgWEge_BEemhMrLZY20oRw" name="" memberEnd="_DgWEgu_BEemhMrLZY20oRw _Dc8LMO_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgWEgu_BEemhMrLZY20oRw" name="" type="_DPOfUO_BEemhMrLZY20oRw" association="_DgWEge_BEemhMrLZY20oRw"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Association" xmi:id="_DgXSoe_BEemhMrLZY20oRw" name="" memberEnd="_DgXSou_BEemhMrLZY20oRw _DdXB8O_BEemhMrLZY20oRw">
+        <ownedEnd xmi:id="_DgXSou_BEemhMrLZY20oRw" name="" type="_DP1jUO_BEemhMrLZY20oRw" association="_DgXSoe_BEemhMrLZY20oRw"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_DGyVAO_BEemhMrLZY20oRw" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_DGy8EO_BEemhMrLZY20oRw" name="time">
+        <packagedElement xmi:type="uml:Package" xmi:id="_DIe-IO_BEemhMrLZY20oRw" name="format">
+          <packagedElement xmi:type="uml:Class" xmi:id="_DZTBUO_BEemhMrLZY20oRw" name="DateTimeFormatter"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DWGjYO_BEemhMrLZY20oRw" name="LocalDate"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DXZj4O_BEemhMrLZY20oRw" name="LocalTime"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_DGzjIO_BEemhMrLZY20oRw" name="util">
+        <packagedElement xmi:type="uml:Class" xmi:id="_DWJmsO_BEemhMrLZY20oRw" name="HashSet"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_DWtAUO_BEemhMrLZY20oRw" name="Set"/>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_DXcnMO_BEemhMrLZY20oRw" name="List"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DXtF4O_BEemhMrLZY20oRw" name="ArrayList"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_DZaWEO_BEemhMrLZY20oRw" name="Arrays"/>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_DaXYUO_BEemhMrLZY20oRw" name="lang">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_DaXYUe_BEemhMrLZY20oRw" name="Double"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_Da7ZAO_BEemhMrLZY20oRw" name="Exception"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_DIY3gO_BEemhMrLZY20oRw" name="org">
+      <packagedElement xmi:type="uml:Package" xmi:id="_DIZekO_BEemhMrLZY20oRw" name="junit">
+        <packagedElement xmi:type="uml:Package" xmi:id="_DIZeke_BEemhMrLZY20oRw" name="jupiter">
+          <packagedElement xmi:type="uml:Package" xmi:id="_DIZeku_BEemhMrLZY20oRw" name="api">
+            <packagedElement xmi:type="uml:Class" xmi:id="_DZKecO_BEemhMrLZY20oRw" name="Assertions"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_DZNhwe_BEemhMrLZY20oRw" name="BeforeEach"/>
+            <packagedElement xmi:type="uml:Interface" xmi:id="_DZOv4e_BEemhMrLZY20oRw" name="Test"/>
+          </packagedElement>
+        </packagedElement>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Package" xmi:id="_DIaFoO_BEemhMrLZY20oRw" name="mockito">
+        <packagedElement xmi:type="uml:Class" xmi:id="_DZMToO_BEemhMrLZY20oRw" name="Mockito"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RepLYO_BEemhMrLZY20oRw" name="Sitio">
+      <ownedOperation xmi:id="_eQUuIO_BEemhMrLZY20oRw" name="buscarPublicaciones" visibility="public">
+        <ownedParameter xmi:id="_eQUuIe_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return"/>
+        <ownedParameter xmi:id="_eQVVMO_BEemhMrLZY20oRw" name="filtros"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ShcsMO_BEemhMrLZY20oRw" name="FiltroXCiudad">
+      <ownedAttribute xmi:id="_DxgbEO_DEemhMrLZY20oRw" name="ciudad" visibility="private">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_zZEpgO_BEemhMrLZY20oRw" name="aplicarFiltro" visibility="public">
+        <ownedParameter xmi:id="_0z9TIO_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return"/>
+        <ownedParameter xmi:id="_zZEpge_BEemhMrLZY20oRw" name="publicaciones" type="_DM4V8O_BEemhMrLZY20oRw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TKLgIO_BEemhMrLZY20oRw" name="FiltroXFechas">
+      <ownedAttribute xmi:id="_K6CkAO_DEemhMrLZY20oRw" name="fechaEntrada" visibility="private" type="_DXZj4O_BEemhMrLZY20oRw"/>
+      <ownedAttribute xmi:id="_MQvRMO_DEemhMrLZY20oRw" name="fechaSalida" visibility="private" type="_DXZj4O_BEemhMrLZY20oRw"/>
+      <ownedOperation xmi:id="_4RGvcO_BEemhMrLZY20oRw" name="aplicarFiltro" visibility="public">
+        <ownedParameter xmi:id="_4RGvce_BEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return"/>
+        <ownedParameter xmi:id="_4RHWgO_BEemhMrLZY20oRw" name="publicaciones" type="_DM4V8O_BEemhMrLZY20oRw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_2KYeEO_CEemhMrLZY20oRw" name="IFiltro">
+      <ownedOperation xmi:id="_2o6NIO_CEemhMrLZY20oRw" name="aplicarFiltro" visibility="public">
+        <ownedParameter xmi:id="_2o6NIe_CEemhMrLZY20oRw" type="_DM4V8O_BEemhMrLZY20oRw" direction="return"/>
+        <ownedParameter xmi:id="_2o6NIu_CEemhMrLZY20oRw" name="publicaciones" type="_DM4V8O_BEemhMrLZY20oRw"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_5jGtYO_CEemhMrLZY20oRw" client="_ShcsMO_BEemhMrLZY20oRw" supplier="_2KYeEO_CEemhMrLZY20oRw"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_O6HHMO_DEemhMrLZY20oRw" client="_2KYeEO_CEemhMrLZY20oRw" supplier="_TKLgIO_BEemhMrLZY20oRw"/>
+    <profileApplication xmi:id="_B2QhQO_BEemhMrLZY20oRw">
+      <eAnnotations xmi:id="_B2ZEIO_BEemhMrLZY20oRw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile-Annotation_2-UMLLabProfile"/>
+      </eAnnotations>
+      <appliedProfile href="pathmap://UMLLAB_PROFILES/UMLLab.profile.uml#UMLLabProfile"/>
+    </profileApplication>
+  </uml:Model>
+  <UMLLabProfile:TargetLanguage xmi:id="_B2iOEO_BEemhMrLZY20oRw" base_Package="_BjRT0O_BEemhMrLZY20oRw">
+    <languageName>java</languageName>
+  </UMLLabProfile:TargetLanguage>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DLkHUO_BEemhMrLZY20oRw" base_Element="_DLiSIO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DOYx0O_BEemhMrLZY20oRw" base_Element="_DOXjsO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DOb1IO_BEemhMrLZY20oRw" base_Element="_DOXjsO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DOb1Ie_BEemhMrLZY20oRw" name="BeforeEach"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DOdqUO_BEemhMrLZY20oRw" base_Element="_DOdDQO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DOeRYO_BEemhMrLZY20oRw" base_Element="_DOdDQO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DOe4cO_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DOmNMO_BEemhMrLZY20oRw" base_Element="_DOk_EO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DOm0QO_BEemhMrLZY20oRw" base_Element="_DOk_EO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DOm0Qe_BEemhMrLZY20oRw" name="BeforeEach"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DOopcO_BEemhMrLZY20oRw" base_Element="_DOoCYO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DOp3kO_BEemhMrLZY20oRw" base_Element="_DOoCYO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DOp3ke_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DOvXIO_BEemhMrLZY20oRw" base_Element="_DOp3ku_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DOv-MO_BEemhMrLZY20oRw" base_Element="_DOp3ku_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DOv-Me_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DOzBgO_BEemhMrLZY20oRw" base_Element="_DOv-Mu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DOzokO_BEemhMrLZY20oRw" base_Element="_DOv-Mu_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DOzoke_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DO2E0O_BEemhMrLZY20oRw" base_Element="_DOzoku_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DO2r4O_BEemhMrLZY20oRw" base_Element="_DOzoku_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DO2r4e_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DO_10O_BEemhMrLZY20oRw" base_Element="_DO-nsO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPBD8O_BEemhMrLZY20oRw" base_Element="_DO-nsO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPBD8e_BEemhMrLZY20oRw" name="BeforeEach"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPCSEO_BEemhMrLZY20oRw" base_Element="_DPBrAO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPC5IO_BEemhMrLZY20oRw" base_Element="_DPBrAO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPDgMO_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPEHQO_BEemhMrLZY20oRw" base_Element="_DPDgMe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPEuUO_BEemhMrLZY20oRw" base_Element="_DPDgMe_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPEuUe_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPGjgO_BEemhMrLZY20oRw" base_Element="_DPFVYO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPHKkO_BEemhMrLZY20oRw" base_Element="_DPFVYO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPHKke_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPSwwO_BEemhMrLZY20oRw" base_Element="_DPRioO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPTX0O_BEemhMrLZY20oRw" base_Element="_DPRioO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPTX0e_BEemhMrLZY20oRw" name="BeforeEach"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPV0EO_BEemhMrLZY20oRw" base_Element="_DPT-4O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPV0Ee_BEemhMrLZY20oRw" base_Element="_DPT-4O_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPV0Eu_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPXCMO_BEemhMrLZY20oRw" base_Element="_DPWbIO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPXpQO_BEemhMrLZY20oRw" base_Element="_DPWbIO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPXpQe_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPYQUO_BEemhMrLZY20oRw" base_Element="_DPXpQu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPYQUe_BEemhMrLZY20oRw" base_Element="_DPXpQu_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPY3YO_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPZecO_BEemhMrLZY20oRw" base_Element="_DPY3Ye_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPZece_BEemhMrLZY20oRw" base_Element="_DPY3Ye_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPaFgO_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPaskO_BEemhMrLZY20oRw" base_Element="_DPaFge_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPaske_BEemhMrLZY20oRw" base_Element="_DPaFge_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPasku_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPchwO_BEemhMrLZY20oRw" base_Element="_DPask-_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPchwe_BEemhMrLZY20oRw" base_Element="_DPask-_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPdI0O_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPdv4O_BEemhMrLZY20oRw" base_Element="_DPdI0e_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPdv4e_BEemhMrLZY20oRw" base_Element="_DPdI0e_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPdv4u_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPe-AO_BEemhMrLZY20oRw" base_Element="_DPeW8O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPgMIO_BEemhMrLZY20oRw" base_Element="_DPeW8O_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPgMIe_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPgzMO_BEemhMrLZY20oRw" base_Element="_DPgMIu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPiBUO_BEemhMrLZY20oRw" base_Element="_DPgMIu_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPiBUe_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPsZYO_BEemhMrLZY20oRw" base_Element="_DPiBUu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPtAcO_BEemhMrLZY20oRw" base_Element="_DPiBUu_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPtAce_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DPtngO_BEemhMrLZY20oRw" base_Element="_DPtAcu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DPuOkO_BEemhMrLZY20oRw" base_Element="_DPtAcu_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DPuOke_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DP3YgO_BEemhMrLZY20oRw" base_Element="_DP2KYO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DP3_kO_BEemhMrLZY20oRw" base_Element="_DP2KYO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DP3_ke_BEemhMrLZY20oRw" name="BeforeEach"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DP5NsO_BEemhMrLZY20oRw" base_Element="_DP4moO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DP50wO_BEemhMrLZY20oRw" base_Element="_DP4moO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DP50we_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DP7C4O_BEemhMrLZY20oRw" base_Element="_DP6b0O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DP7p8O_BEemhMrLZY20oRw" base_Element="_DP6b0O_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DP7p8e_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DP84EO_BEemhMrLZY20oRw" base_Element="_DP8RAO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DP9fIO_BEemhMrLZY20oRw" base_Element="_DP8RAO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DP9fIe_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DP-GMO_BEemhMrLZY20oRw" base_Element="_DP9fIu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DP-tQO_BEemhMrLZY20oRw" base_Element="_DP9fIu_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DP-tQe_BEemhMrLZY20oRw" name="Test"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DV6WIO_BEemhMrLZY20oRw" base_Element="_DV4g8O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DV69MO_BEemhMrLZY20oRw" base_Element="_DV4g8O_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DV69Me_BEemhMrLZY20oRw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DV8yYe_BEemhMrLZY20oRw" base_Element="_DV8LUO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DV-AgO_BEemhMrLZY20oRw" base_Element="_DV8LUO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DV-Age_BEemhMrLZY20oRw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DWBD0O_BEemhMrLZY20oRw" base_Element="_DV_OoO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DWBD0e_BEemhMrLZY20oRw" base_Element="_DV_OoO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DWBq4O_BEemhMrLZY20oRw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DWEuMe_BEemhMrLZY20oRw" base_Element="_DWEHIO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DWFVQO_BEemhMrLZY20oRw" base_Element="_DWEHIO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DWF8UO_BEemhMrLZY20oRw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:Reference xmi:id="_DWHxgO_BEemhMrLZY20oRw" base_Element="_DWGjYO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DWsZQO_BEemhMrLZY20oRw" base_Element="_DWJmsO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DW7CwO_BEemhMrLZY20oRw" base_Element="_DWtAUO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DXayAO_BEemhMrLZY20oRw" base_Element="_DXZj4O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DXfqgO_BEemhMrLZY20oRw" base_Element="_DXcnMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DXviIO_BEemhMrLZY20oRw" base_Element="_DXtF4O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DZLskO_BEemhMrLZY20oRw" base_Element="_DZKecO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DZNhwO_BEemhMrLZY20oRw" base_Element="_DZMToO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DZOv4O_BEemhMrLZY20oRw" base_Element="_DZNhwe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DZP-AO_BEemhMrLZY20oRw" base_Element="_DZOv4e_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DZUPcO_BEemhMrLZY20oRw" base_Element="_DZTBUO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DZbkMO_BEemhMrLZY20oRw" base_Element="_DZaWEO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DaDPQO_BEemhMrLZY20oRw" base_Element="_DaCoMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Generics xmi:id="_DaEdYO_BEemhMrLZY20oRw" genericsValue="Publicacion" base_Element="_DaCoMe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DaLLEO_BEemhMrLZY20oRw" base_Element="_DaCoMO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DaLLEe_BEemhMrLZY20oRw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DaNnUO_BEemhMrLZY20oRw" base_Element="_DaMZMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Generics xmi:id="_DaO1cO_BEemhMrLZY20oRw" genericsValue="Publicacion" base_Element="_DaMZMe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Annotations xmi:id="_DaSf0O_BEemhMrLZY20oRw" base_Element="_DaMZMO_BEemhMrLZY20oRw">
+    <annotations xmi:id="_DaSf0e_BEemhMrLZY20oRw" name="Override"/>
+  </UMLLabProfile:Annotations>
+  <UMLLabProfile:StyledElement xmi:id="_DaU8EO_BEemhMrLZY20oRw" base_Element="_DaTt8O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Generics xmi:id="_DaVjIO_BEemhMrLZY20oRw" genericsValue="Publicacion" base_Element="_DaUVAO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DaZ0kO_BEemhMrLZY20oRw" base_Element="_DaXYUe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Generics xmi:id="_DagiQO_BEemhMrLZY20oRw" genericsValue="Servicio" base_Element="_DaeGAe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Generics xmi:id="_Da5j0O_BEemhMrLZY20oRw" genericsValue="IFiltro" base_Element="_Da2gge_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Da8AEO_BEemhMrLZY20oRw" base_Element="_Da7ZAO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dbk5QO_BEemhMrLZY20oRw" base_Element="_DbjrIO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcMkUO_BEemhMrLZY20oRw" base_Element="_DcL9QO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcopMO_BEemhMrLZY20oRw" base_Element="_DcnbEO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dcp3UO_BEemhMrLZY20oRw" base_Element="_DcopMe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcqeYO_BEemhMrLZY20oRw" base_Element="_Dcp3Ue_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dcs6oO_BEemhMrLZY20oRw" base_Element="_DcrFcO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcthsO_BEemhMrLZY20oRw" base_Element="_Dcs6oe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcuIwe_BEemhMrLZY20oRw" base_Element="_Dcthse_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dcuv0O_BEemhMrLZY20oRw" base_Element="_DcuIwu_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcwlAO_BEemhMrLZY20oRw" base_Element="_Dcv98O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DcxMEO_BEemhMrLZY20oRw" base_Element="_DcwlAe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DczBQO_BEemhMrLZY20oRw" base_Element="_DcyaMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DczoUO_BEemhMrLZY20oRw" base_Element="_DczBQe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc1dgO_BEemhMrLZY20oRw" base_Element="_Dc0PYO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc2EkO_BEemhMrLZY20oRw" base_Element="_Dc1dge_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc3SsO_BEemhMrLZY20oRw" base_Element="_Dc2roO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc4g0O_BEemhMrLZY20oRw" base_Element="_Dc3Sse_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc5u8O_BEemhMrLZY20oRw" base_Element="_Dc5H4O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc6WAO_BEemhMrLZY20oRw" base_Element="_Dc5u8e_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc7kIO_BEemhMrLZY20oRw" base_Element="_Dc6WAe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_Dc8yQO_BEemhMrLZY20oRw" base_Element="_Dc8LMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:LegacyStyledElement xmi:id="_DdYQEO_BEemhMrLZY20oRw" base_Element="_DdXB8O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DfqIAO_BEemhMrLZY20oRw" base_Element="_DfoS0O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DfrWIO_BEemhMrLZY20oRw" base_Element="_DfqvEO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DfxcwO_BEemhMrLZY20oRw" base_Element="_DfrWIe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DfzR8O_BEemhMrLZY20oRw" base_Element="_Dfxcwe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df0gEO_BEemhMrLZY20oRw" base_Element="_DfzR8e_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df1HIO_BEemhMrLZY20oRw" base_Element="_Df0gEe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df28UO_BEemhMrLZY20oRw" base_Element="_Df1uMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df4KcO_BEemhMrLZY20oRw" base_Element="_Df28Ue_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df5YkO_BEemhMrLZY20oRw" base_Element="_Df4Kce_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df7NwO_BEemhMrLZY20oRw" base_Element="_Df5Yke_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_Df-4IO_BEemhMrLZY20oRw" base_Element="_Df9qAO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgAtUO_BEemhMrLZY20oRw" base_Element="_Df_fMO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgDJkO_BEemhMrLZY20oRw" base_Element="_DgB7cO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgE-wO_BEemhMrLZY20oRw" base_Element="_DgDJke_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgHbAO_BEemhMrLZY20oRw" base_Element="_DgFl0O_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgJQMO_BEemhMrLZY20oRw" base_Element="_DgICEO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgKeUO_BEemhMrLZY20oRw" base_Element="_DgJ3QO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgMTgO_BEemhMrLZY20oRw" base_Element="_DgLFYO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgOIsO_BEemhMrLZY20oRw" base_Element="_DgM6kO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgPW0O_BEemhMrLZY20oRw" base_Element="_DgOvwO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgQk8O_BEemhMrLZY20oRw" base_Element="_DgPW0e_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgRzEO_BEemhMrLZY20oRw" base_Element="_DgQk8e_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgTBMO_BEemhMrLZY20oRw" base_Element="_DgSaIO_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgUPUO_BEemhMrLZY20oRw" base_Element="_DgTBMe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgWEgO_BEemhMrLZY20oRw" base_Element="_DgUPUe_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgXSoO_BEemhMrLZY20oRw" base_Element="_DgWEge_BEemhMrLZY20oRw"/>
+  <UMLLabProfile:Reference xmi:id="_DgX5sO_BEemhMrLZY20oRw" base_Element="_DgXSoe_BEemhMrLZY20oRw"/>
+</xmi:XMI>
