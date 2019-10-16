@@ -1,7 +1,11 @@
 package packageProyectoIntegrador;
 
 public abstract class EstadoReserva {
-	
-	public abstract void procesar(EstadoReserva nuevoEstado, Reserva unaReserva);
-	
+
+	protected IEmail email;
+
+	public void procesarReserva(Reserva r) {
+		// not implemented method
+	}
+
 }
