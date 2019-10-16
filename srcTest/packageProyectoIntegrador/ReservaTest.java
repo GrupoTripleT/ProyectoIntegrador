@@ -1,13 +1,11 @@
 package packageProyectoIntegrador;
 
+import static org.mockito.Mockito.*;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -15,88 +13,80 @@ class ReservaTest {
 	
 	
 	Sitio site = new Sitio();
-	Publicacion p1;
-	TipoDeInmueble tInmueble = new TipoDeInmueble("Casa");
-	Inmueble in;
+	Publicacion publicacion;
+	Inmueble inmuebleDummy = mock(Inmueble.class);
+	Usuario propiatarioDummy = mock(Usuario.class);
+	Usuario inquilinoDummy = mock(Usuario.class);
+	
+	LocalDate fechaEntrada;
+	LocalDate fechaSalida;
+	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+	
+	Reserva reserva;
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		
-		in = new Inmueble(tInmueble, 50, "Arg", "BA", "Sonza 12", new ArrayList<Servicio>(), 500.0, LocalTime.now(), LocalTime.now());
-		
-		Usuario prop = new Usuario("","","", 1);
-		
-		p1 = new Publicacion(in, prop); // agrego inmueble y propitario
-		
-		site.publicar(p1);
-		
+		publicacion = new Publicacion(inmuebleDummy, propiatarioDummy);
+		site.publicar(publicacion);
 	}
 
 	@Test
 	void agregarReserva() { 
-		LocalDate fechaEntrada = LocalDate.now();
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-		LocalDate fechaSalida = LocalDate.parse("24/10/2019", formatter);
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		
-		Usuario inq = new Usuario("","","", 1);
-		Reserva res = new Reserva(fechaEntrada, fechaSalida, inq);
-		
-		
-		p1.agregarReserva(res);
-		assertEquals(1, p1.getReservas().size());
+		publicacion.agregarReserva(reserva);
+		assertEquals(1, publicacion.getReservas().size());
 	}
 	
 	
 	@Test
 	void reservaNoValida() {
-		LocalDate fechaEntrada = LocalDate.now();
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-		LocalDate fechaSalida = LocalDate.parse("24/10/2019", formatter);
+		reserva.cambiarEstado(new EstadoAprobado());
+		publicacion.agregarReserva(reserva);
 		
-		Usuario inq = new Usuario("","","", 1);
-		Reserva res = new Reserva(fechaEntrada, fechaSalida, inq);
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
 		
-		res.cambiarEstado(new EstadoAprobado());
-		p1.agregarReserva(res);
-		
-		
-		Usuario inq2 = new Usuario("","","", 1);
-		Reserva res2 = new Reserva(fechaEntrada, fechaSalida, inq2); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
-		
-		assertEquals(true, p1.hayReservasEnFecha(res2.getFechaEntrada(), res2.getFechaSalida()));
+		assertEquals(true, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 	}
 	
 	@Test
 	void reservaValida() {
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		reserva.cambiarEstado(new EstadoAprobado()); // aprobacion de reserva
 		
-		LocalDate now = LocalDate.now();
-		LocalDate later = LocalDate.parse("24/10/2019", formatter);
+		publicacion.agregarReserva(reserva);
 		
-		Usuario inq = new Usuario("","","", 1);
-		Reserva res = new Reserva(now, later, inq);
-		res.cambiarEstado(new EstadoAprobado());
-		p1.agregarReserva(res);
+		fechaEntrada = LocalDate.parse("20/10/2020", formatter);
+		fechaSalida = LocalDate.parse("30/10/2020", formatter);
 		
-		LocalDate nowReserva3 = LocalDate.parse("20/10/2020", formatter);
-		LocalDate laterReserva3 = LocalDate.parse("30/10/2020", formatter);
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // no existe reserva previamente agregada en esta fecha
 		
-		Usuario inq2 = new Usuario("","","", 1);
-		Reserva res3 = new Reserva(nowReserva3, laterReserva3, inq2); // no existe reserva previamente agregada en esta fecha
+		assertEquals(false, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 		
-		assertEquals(false, p1.hayReservasEnFecha(res3.getFechaEntrada(), res3.getFechaSalida()));
+		publicacion.agregarReserva(reserva);
 		
-		p1.agregarReserva(res3);
-		
-		assertEquals(2, p1.getReservas().size());
-		
+		assertEquals(2, publicacion.getReservas().size());
 	}
 	
 	@Test 
 	void aprobarReserva(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		reserva.cambiarEstado(new EstadoAprobado());
+		assertEquals(true, reserva.getEstado() instanceof EstadoAprobado);
 		
 	}
 
