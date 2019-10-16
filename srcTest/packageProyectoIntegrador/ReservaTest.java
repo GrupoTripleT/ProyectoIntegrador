@@ -49,8 +49,8 @@ class ReservaTest {
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		
-		reserva.cambiarEstado(new EstadoAprobado());
 		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
 		
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
 		
@@ -61,15 +61,12 @@ class ReservaTest {
 	void reservaValida() {
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
-
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		reserva.cambiarEstado(new EstadoAprobado()); // aprobacion de reserva
-		
 		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
 		
 		fechaEntrada = LocalDate.parse("20/10/2020", formatter);
 		fechaSalida = LocalDate.parse("30/10/2020", formatter);
-		
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // no existe reserva previamente agregada en esta fecha
 		
 		assertEquals(false, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
@@ -85,7 +82,8 @@ class ReservaTest {
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		reserva.cambiarEstado(new EstadoAprobado());
+		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
 		assertEquals(true, reserva.getEstado() instanceof EstadoAprobado);
 		
 	}
