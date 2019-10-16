@@ -2,6 +2,7 @@ package packageProyectoIntegrador;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 public class Sitio {
@@ -44,5 +45,17 @@ public class Sitio {
 	public void registrarUsuario(Usuario usuario) {
 		this.getUsuarios().add(usuario);
 	}
-
+	
+	/*		
+	 * 		TUPI
+	 * 		metodo para buscar permite un unico criterio de busqueda
+	 * 		si es combinado, agregarlos a BusquedaCombinadaTupi y utlizar ese
+	 */
+	
+	public List<Publicacion> filtrarBusqueda (List<Publicacion> publicaciones, IBuscadorTupi buscador) {
+		
+		return (buscador.filtrarBusqueda(publicaciones));
+		
+	}
+	
 }
