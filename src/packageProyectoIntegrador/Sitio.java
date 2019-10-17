@@ -10,17 +10,20 @@ public class Sitio {
 	private List<Usuario> usuarios;
 	private List<Inmueble> inmuebles;
 	private List<Publicacion> publicaciones;
+	private IBusqueda buscador;
 	
-	
+	/*	constructor	*/
 	
 	public Sitio() {
 		super();
 		this.inmuebles = new ArrayList<Inmueble>();
 		this.publicaciones = new ArrayList<Publicacion>();
 		this.usuarios = new ArrayList<Usuario>();
-
+		this.buscador = null;
 	}
 
+	/*	getter y setters	*/
+	
 	public List<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
@@ -28,7 +31,6 @@ public class Sitio {
 	public List<Inmueble> getInmuebles() {
 		return inmuebles;
 	}
-
 
 	public List<Publicacion> getPublicaciones() {
 		return publicaciones;
@@ -46,16 +48,14 @@ public class Sitio {
 		this.getUsuarios().add(usuario);
 	}
 	
-	/*		
-	 * 		TUPI
-	 * 		metodo para buscar permite un unico criterio de busqueda
-	 * 		si es combinado, agregarlos a BusquedaCombinadaTupi y utlizar ese
-	 */
+	/*	metodos para busquedas	*/
 	
-	public List<Publicacion> filtrarBusqueda (List<Publicacion> publicaciones, IBuscadorTupi buscador) {
-		
-		return (buscador.filtrarBusqueda(publicaciones));
-		
+	public Set<Publicacion> buscarPublicacion() {
+		return (buscador.filtrarBusqueda(publicaciones));	
+	}
+	
+	public void agregarBusqueda(IBusqueda unBuscador) {
+		this.buscador = unBuscador;
 	}
 	
 }
