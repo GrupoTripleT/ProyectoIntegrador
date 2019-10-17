@@ -27,11 +27,21 @@ public class Publicacion {
 	public List<Reserva> getReservas() { return reservas; }
 	
 	// #Metodos
-	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){		
+	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){	
+		/*	proposito: evaluar si existe alguna reserva een estado aprobado y rango de fechas fe y fs.
+		 *  Si existe alguna coincidencia denota true */
 		return reservas.stream().anyMatch(rs -> 
-			(rs.getFechaEntrada().isEqual(fe) || rs.getFechaEntrada().isAfter(fe)) &&
-			(rs.getFechaSalida().isEqual(fs) || rs.getFechaSalida().isBefore(fs)) &&
+			esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
+			esFechaIncluidaEnRangoFechas(fs, rs.getFechaSalida(), rs.getFechaSalida()) &&
 			rs.getEstado() instanceof EstadoAprobado); 
+	}
+	
+	private boolean esFechaIncluidaEnRangoFechas(LocalDate fechaEvaluar, LocalDate rangoInicial, LocalDate rangoFinal) {
+		/*	proposito: evaluar si fechaEvaluar esta en el rango de fechas rangoInicial a rangoFinal.
+		 *  Si se encuentra en rango o es igual a alguno de sus extremos denota true */
+		return  fechaEvaluar.equals(rangoInicial) || 
+				fechaEvaluar.equals(rangoFinal) ||
+				fechaEvaluar.isAfter(rangoInicial) && fechaEvaluar.isBefore(rangoFinal);
 	}
 	
 	public void agregarReserva(Reserva r) {
