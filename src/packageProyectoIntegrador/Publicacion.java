@@ -37,6 +37,10 @@ public class Publicacion {
 	}
 	
 	// #Metodos
+	public boolean esCiudadPublicacion(String unaCiudad) {
+		return (unaCiudad == this.getInmueble().getCiudad());
+	}
+	
 	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){	
 		/*	proposito: evaluar si existe alguna reserva een estado aprobado y rango de fechas fe y fs.
 		 *  Si existe alguna coincidencia denota true */
@@ -46,16 +50,13 @@ public class Publicacion {
 			rs.getEstado() instanceof EstadoAprobado); 
 	}
 	
-	public boolean esCiudadPublicacion(String unaCiudad) {
-		return (unaCiudad == this.getInmueble().getCiudad());
-	}
 	
 	private boolean esFechaIncluidaEnRangoFechas(LocalDate fechaEvaluar, LocalDate rangoInicial, LocalDate rangoFinal) {
 		/*	proposito: evaluar si fechaEvaluar esta en el rango de fechas rangoInicial a rangoFinal.
 		 *  Si se encuentra en rango o es igual a alguno de sus extremos denota true */
 		return  fechaEvaluar.isEqual(rangoInicial) || 
 				fechaEvaluar.isEqual(rangoFinal) ||
-				fechaEvaluar.isAfter(rangoInicial) && rangoFinal.isAfter(fechaEvaluar);
+				(fechaEvaluar.isAfter(rangoInicial) && fechaEvaluar.isBefore(rangoFinal));
 	}
 	
 	public void agregarReserva(Reserva r) {
@@ -63,7 +64,6 @@ public class Publicacion {
 			this.reservas.add(r);
 		}
 	}
-	
 	
 	public void aprobarReserva(Reserva r) {
 		r.cambiarEstado(new EstadoAprobado());
