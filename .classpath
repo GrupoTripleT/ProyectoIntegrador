@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="packageProyectoIntegrador/Buscador.java|packageProyectoIntegrador/BuscarBaseDecorer.java|packageProyectoIntegrador/BuscarCantHuespedDecorer.java|packageProyectoIntegrador/BuscarPrecioDecorer.java|packageProyectoIntegrador/FiltrosBusqueda.java|packageProyectoIntegrador/IBuscador.java" kind="src" path="src"/>
+	<classpathentry excluding="packageProyectoIntegrador/Buscador.java|packageProyectoIntegrador/BuscarBaseDecorer.java|packageProyectoIntegrador/BuscarCantHuespedDecorer.java|packageProyectoIntegrador/BuscarPrecioDecorer.java|packageProyectoIntegrador/FiltrosBusqueda.java|packageProyectoIntegrador/IBuscador.java|packageProyectoIntegrador/EstadoFinalizado.java|packageProyectoIntegrador/EstadoCancelado.java" kind="src" path="src"/>
 	<classpathentry kind="src" path="srcTest"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>

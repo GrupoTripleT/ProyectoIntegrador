@@ -6,23 +6,23 @@ import java.util.List;
 
 public class Publicacion {
 	
-	private Inmueble inmueble;
-	private Usuario propietario;
+	//private Inmueble inmueble;
+	//private Usuario propietario;
 	private List<Reserva> reservas;
 	
 	public Publicacion(Inmueble inmueble, Usuario propitario) { 
 		this.reservas = new ArrayList<Reserva>(); 
-		setInmueble(inmueble);
-		setPropietario(propitario);
+		//setInmueble(inmueble);
+		//setPropietario(propitario);
 	}
 	
-	public Usuario getPropietario() { return propietario; }
+	//public Usuario getPropietario() { return propietario; }
 
-	public void setPropietario(Usuario propietario) { this.propietario = propietario; }
+	//public void setPropietario(Usuario propietario) { this.propietario = propietario; }
 
-	public Inmueble getInmueble() { return inmueble; }
+	//public Inmueble getInmueble() { return inmueble; }
 	
-	public void setInmueble(Inmueble inmueble) { this.inmueble = inmueble; }
+	//public void setInmueble(Inmueble inmueble) { this.inmueble = inmueble; }
 	
 	public List<Reserva> getReservas() { return reservas; }
 	
@@ -31,17 +31,17 @@ public class Publicacion {
 		/*	proposito: evaluar si existe alguna reserva een estado aprobado y rango de fechas fe y fs.
 		 *  Si existe alguna coincidencia denota true */
 		return reservas.stream().anyMatch(rs -> 
-			esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
-			esFechaIncluidaEnRangoFechas(fs, rs.getFechaSalida(), rs.getFechaSalida()) &&
+			(esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
+			esFechaIncluidaEnRangoFechas(fs, rs.getFechaEntrada(), rs.getFechaSalida())) &&
 			rs.getEstado() instanceof EstadoAprobado); 
 	}
 	
 	private boolean esFechaIncluidaEnRangoFechas(LocalDate fechaEvaluar, LocalDate rangoInicial, LocalDate rangoFinal) {
 		/*	proposito: evaluar si fechaEvaluar esta en el rango de fechas rangoInicial a rangoFinal.
 		 *  Si se encuentra en rango o es igual a alguno de sus extremos denota true */
-		return  fechaEvaluar.equals(rangoInicial) || 
-				fechaEvaluar.equals(rangoFinal) ||
-				fechaEvaluar.isAfter(rangoInicial) && fechaEvaluar.isBefore(rangoFinal);
+		return  fechaEvaluar.isEqual(rangoInicial) || 
+				fechaEvaluar.isEqual(rangoFinal) ||
+				fechaEvaluar.isAfter(rangoInicial) && rangoFinal.isAfter(fechaEvaluar);
 	}
 	
 	public void agregarReserva(Reserva r) {
