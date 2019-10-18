@@ -16,15 +16,25 @@ public class Publicacion {
 		setPropietario(propitario);
 	}
 	
-	public Usuario getPropietario() { return propietario; }
+	public Usuario getPropietario() {
+		return propietario;
+	}
 
-	public void setPropietario(Usuario propietario) { this.propietario = propietario; }
+	public void setPropietario(Usuario propietario) {
+		this.propietario = propietario;
+	}
 
-	public Inmueble getInmueble() { return inmueble; }
+	public Inmueble getInmueble() {
+		return inmueble;
+	}
 	
-	public void setInmueble(Inmueble inmueble) { this.inmueble = inmueble; }
+	public void setInmueble(Inmueble inmueble) {
+		this.inmueble = inmueble;
+		}
 	
-	public List<Reserva> getReservas() { return reservas; }
+	public List<Reserva> getReservas() {
+		return reservas;
+	}
 	
 	// #Metodos
 	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){		
@@ -34,10 +44,15 @@ public class Publicacion {
 			rs.getEstado() instanceof EstadoAprobado); 
 	}
 	
+	public boolean esCiudadPublicacion(String unaCiudad) {
+		return (unaCiudad == this.getInmueble().getCiudad());
+	}
+	
 	public void agregarReserva(Reserva r) {
 		if (!hayReservasEnFecha(r.getFechaEntrada(), r.getFechaSalida())) {
 			this.reservas.add(r);
 		}
 	}
+	
 	// #endMetodos
 }

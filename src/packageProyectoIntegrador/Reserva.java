@@ -8,14 +8,14 @@ public class Reserva {
 	private LocalDate fechaEntrada;
 	private LocalDate fechaSalida;
 	private Usuario inquilino;
-	
+
 	public Reserva(LocalDate fe, LocalDate fs, Usuario in) {
 		this.setEstado(new EstadoSolicitud());
 		this.setFechaEntrada(fe);
 		this.setFechaSalida(fs);
 		this.setInquilino(in);
 	}
-	
+
 	public void cambiarEstado(EstadoReserva e) {
 		e.procesarReserva(this);
 	}
