@@ -64,9 +64,5 @@ public class Publicacion {
 			this.reservas.add(r);
 		}
 	}
-	
-	public void aprobarReserva(Reserva r) {
-		r.cambiarEstado(new EstadoAprobado());
-	}
 	// #endMetodos
 }

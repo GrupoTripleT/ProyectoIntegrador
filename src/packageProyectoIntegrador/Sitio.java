@@ -58,4 +58,8 @@ public class Sitio {
 		this.buscador = unBuscador;
 	}
 	
+	public void aprobarReserva(Reserva reserva) {
+		reserva.aprobarReserva();
+	}
+	
 }

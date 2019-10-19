@@ -10,7 +10,7 @@ public class Reserva {
 	private Usuario inquilino;
 
 	public Reserva(LocalDate fe, LocalDate fs, Usuario in) {
-		this.setEstado(new EstadoSolicitud());
+		this.cambiarEstado(new EstadoSolicitud());
 		this.setFechaEntrada(fe);
 		this.setFechaSalida(fs);
 		this.setInquilino(in);
@@ -23,11 +23,11 @@ public class Reserva {
 	public EstadoReserva getEstado() {
 		return estado;
 	}
-
-	public void setEstado(EstadoReserva estado) {
-		this.estado = estado;
+	
+	public void setEstado(EstadoReserva e) {
+		this.estado = e;
 	}
-
+	
 	public LocalDate getFechaEntrada() {
 		return fechaEntrada;
 	}
@@ -50,5 +50,9 @@ public class Reserva {
 
 	private void setInquilino(Usuario inquilino) {
 		this.inquilino = inquilino;
+	}
+	
+	public void aprobarReserva() {
+		this.cambiarEstado(new EstadoAprobado());
 	}
 }

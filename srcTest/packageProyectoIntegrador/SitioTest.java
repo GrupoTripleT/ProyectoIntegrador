@@ -1,9 +1,14 @@
 package packageProyectoIntegrador;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.Mockito.*;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 class SitioTest {
 
@@ -42,6 +47,25 @@ class SitioTest {
 		assertEquals(1, sitioWeb.getPublicaciones().size());
 	}
 	
-	
+	@Test
+	void testAprobarReserva() { 
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+		LocalDate fechaEntrada = LocalDate.now();
+		LocalDate fechaSalida = LocalDate.parse("24/10/2019", formatter);
+		
+		Usuario usuarioInquilinoDummy = mock (Usuario.class);
+		Usuario usuarioPropiDummy = mock (Usuario.class);
+		inmuebleDummy = mock (Inmueble.class);
+		
+		Reserva reserva = new Reserva(fechaEntrada, fechaSalida, usuarioPropiDummy);
+
+		Publicacion publicacion = new Publicacion(inmuebleDummy, usuarioInquilinoDummy);
+		
+		publicacion.agregarReserva(reserva);
+		
+		sitioWeb.aprobarReserva(reserva);
+		
+		assert(reserva.getEstado() instanceof EstadoAprobado);
+	}
 
 }
