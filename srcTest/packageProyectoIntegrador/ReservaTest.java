@@ -154,5 +154,32 @@ class ReservaTest {
 		assertEquals(true, reserva.getEstado() instanceof EstadoAprobado);
 		
 	}
+	
+//	@Test 
+//	void enviarEmailCuandoAprueba(){
+//		reserva = mock( Reserva.class, RETURNS_DEEP_STUBS).w ;
+//		when(reserva.getInquilino()).thenReturn(inquilinoDummy);
+//		when(reserva.getEstado()).then
+//		reserva.aprobarReserva();
+//		verify(reserva).getEstado().getEmailManager().enviar(reserva.getInquilino().getMail(), "Se ha aprobado su solicitud");
+//
+//	}
+	
+//	@Test
+//	void testDeBusquedaXFechas() {
+//		
+//		fechaEntrada = LocalDate.parse("02/09/2019", formatter);
+//		fechaSalida = LocalDate.parse("10/10/2019", formatter);
+//		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+//		
+//		
+//		publicacion.agregarReserva(reserva);
+//		reserva.aprobarReserva();
+//		
+//		fechaEntrada = LocalDate.parse("20/10/2019", formatter);
+//		fechaSalida = LocalDate.parse("25/10/2019", formatter);
+//		
+//		assertEquals(false, publicacion.hayReservasEnFecha(fechaEntrada, fechaSalida));
+//	}
 
 }

@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.cglib.core.CollectionUtils;
+
 import static org.mockito.Mockito.*;
 
 import java.time.LocalDate;
@@ -65,7 +67,8 @@ class SitioTest {
 		
 		sitioWeb.aprobarReserva(reserva);
 		
-		assert(reserva.getEstado() instanceof EstadoAprobado);
+		assertEquals(true, reserva.getEstado() instanceof EstadoAprobado);
+		
 	}
 
 }
