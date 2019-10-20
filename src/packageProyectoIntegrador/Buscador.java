@@ -26,13 +26,13 @@ public class Buscador {
 		filtros.add(filtro);
 	}
 	
-		public Set<Publicacion> buscar(Set<Publicacion> publicaciones) {		
+	public Set<Publicacion> buscar(Set<Publicacion> publicaciones) {		
 		
-			Set<Publicacion> publicacionesFiltradas = new HashSet<Publicacion>();
-			for(Filtro f : this.getFiltros()) {
-				publicacionesFiltradas = f.aplicarFiltro(publicaciones);
-			}
-		
-			return publicacionesFiltradas;	
+		Set<Publicacion> publicacionesFiltradas = publicaciones;
+		for(Filtro f : this.getFiltros()) {
+				publicacionesFiltradas = f.aplicarFiltro(publicacionesFiltradas);
 		}
+		
+		return publicacionesFiltradas;	
+	}
 }

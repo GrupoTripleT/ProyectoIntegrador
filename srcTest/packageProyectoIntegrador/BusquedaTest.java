@@ -99,8 +99,27 @@ class BusquedaTest {
 	}
 	
 	@Test
+	void testDeBusquedaXFechasFalso() {
+		
+		fechaEntrada = LocalDate.parse("02/10/2019", formatter);
+		fechaSalida = LocalDate.parse("22/10/2019", formatter);
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		
+		publicacionUbicacionBuenosAires.agregarReserva(reserva);
+		publicacionUbicacionBuenosAires.aprobarReserva(reserva);
+		
+		sitio.publicar(publicacionUbicacionBuenosAires);
+		
+		filtroFechaPrueba = new FiltroFecha(LocalDate.parse("20/10/2019", formatter), LocalDate.parse("25/10/2019", formatter));
+		buscador.agregarFiltro(filtroFechaPrueba);
+		
+		assertFalse(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionBuenosAires));
+		assertTrue(sitio.buscarPublicaciones(buscador).isEmpty());
+	}
+	
+	@Test
 	void testDeBusquedaConbinadaEntreCiudadYFecha() {
-		reserva = new Reserva(LocalDate.parse("02/09/2019", formatter), LocalDate.parse("10/10/2019", formatter), inquilinoDummy);
+		reserva = new Reserva(LocalDate.parse("02/10/2019", formatter), LocalDate.parse("18/10/2019", formatter), inquilinoDummy);
 
 		publicacionUbicacionBuenosAires.agregarReserva(reserva);
 		publicacionUbicacionBuenosAires.aprobarReserva(reserva);
@@ -123,7 +142,7 @@ class BusquedaTest {
 		assertTrue(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionBuenosAires));
 		assertFalse(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionCordoba));
 		assertFalse(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionCordoba2));
-		
+		assertFalse(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionBuenosAires2));
 	}
 
 }
