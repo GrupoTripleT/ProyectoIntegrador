@@ -19,6 +19,8 @@ class BusquedaTest {
 	public Publicacion publicacionUbicacionCordoba;
 	public Publicacion publicacionUbicacionCordoba2;
 	public Publicacion publicacionUbicacionBuenosAires;
+	public Publicacion publicacionUbicacionBuenosAires2;
+	
 	public Usuario usuarioDammy;
 	public Inmueble inmuebleDammyCiudadCordoba;
 	public Inmueble inmuebleDammyCiudadBA;
@@ -37,6 +39,7 @@ class BusquedaTest {
 	public Sitio sitio = new Sitio();
 	
 	public Reserva reserva;
+	public Reserva reserva2;
 	
 	
 	@BeforeEach
@@ -57,6 +60,7 @@ class BusquedaTest {
 		publicacionUbicacionCordoba2 = new Publicacion(inmuebleDammyCiudadCordoba, usuarioDammy);
 			
 		publicacionUbicacionBuenosAires = new Publicacion(inmuebleDammyCiudadBA, usuarioDammy);
+		publicacionUbicacionBuenosAires2 = new Publicacion(inmuebleDammyCiudadBA, usuarioDammy);
 
 		buscador = new Buscador();		
 	}
@@ -96,6 +100,29 @@ class BusquedaTest {
 	
 	@Test
 	void testDeBusquedaConbinadaEntreCiudadYFecha() {
+		reserva = new Reserva(LocalDate.parse("02/09/2019", formatter), LocalDate.parse("10/10/2019", formatter), inquilinoDummy);
+
+		publicacionUbicacionBuenosAires.agregarReserva(reserva);
+		publicacionUbicacionBuenosAires.aprobarReserva(reserva);
+		
+		reserva2 = new Reserva(LocalDate.parse("20/10/2019", formatter), LocalDate.parse("25/10/2019", formatter), inquilinoDummy);
+		publicacionUbicacionBuenosAires2.agregarReserva(reserva2);
+		publicacionUbicacionBuenosAires2.aprobarReserva(reserva2);
+		
+		sitio.publicar(publicacionUbicacionBuenosAires);
+		sitio.publicar(publicacionUbicacionCordoba);
+		sitio.publicar(publicacionUbicacionCordoba2);
+		sitio.publicar(publicacionUbicacionBuenosAires2);
+		
+		filtroCiudadPrueba = new FiltroCiudad("Buenos Aires");
+		filtroFechaPrueba = new FiltroFecha(LocalDate.parse("20/10/2019", formatter), LocalDate.parse("25/10/2019", formatter));
+		
+		buscador.agregarFiltro(filtroFechaPrueba);
+		buscador.agregarFiltro(filtroCiudadPrueba);
+		
+		assertTrue(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionBuenosAires));
+		assertFalse(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionCordoba));
+		assertFalse(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionCordoba2));
 		
 	}
 

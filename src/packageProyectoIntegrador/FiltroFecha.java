@@ -37,7 +37,7 @@ public class FiltroFecha extends Filtro {
 
 	@Override
 	public Boolean esPublicacionFiltrada(Publicacion publicacion) {
-		return publicacion.hayReservasEnFecha(this.getFechaEntrada(),this.getFechaSalida());
+		return !publicacion.hayReservasEnFecha(this.getFechaEntrada(),this.getFechaSalida());
 	}
 	
 
