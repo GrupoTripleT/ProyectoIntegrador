@@ -57,4 +57,8 @@ public class Sitio {
 	public Set<Publicacion> buscarPublicaciones(Buscador buscador) {
 		return buscador.buscar(this.getPublicaciones());
 	}
+	
+	public void aprobarReserva(Publicacion publicacion, Reserva reserva) {
+		publicacion.aprobarReserva(reserva);
+	}
 }

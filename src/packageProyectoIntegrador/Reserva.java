@@ -51,4 +51,8 @@ public class Reserva {
 	private void setInquilino(Usuario inquilino) {
 		this.inquilino = inquilino;
 	}
+	
+	public void aprobarReserva() {
+		this.cambiarEstado(new EstadoAprobado());
+	}
 }
