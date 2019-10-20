@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
-	<classpathentry kind="lib" path="C:/Users/Nikco/Downloads/mockito-core-3.0.0.jar" sourcepath="C:/Users/Nikco/Downloads/mockito-core-3.0.0-sources.jar">
+	<classpathentry excluding="packageProyectoIntegrador/BuscarBaseDecorer.java|packageProyectoIntegrador/BuscarCantHuespedDecorer.java|packageProyectoIntegrador/BuscarPrecioDecorer.java|packageProyectoIntegrador/FiltrosBusqueda.java|packageProyectoIntegrador/IBuscador.java|packageProyectoIntegrador/EstadoFinalizado.java|packageProyectoIntegrador/EstadoCancelado.java" kind="src" path="src"/>
+	<classpathentry kind="src" path="srcTest"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/Users/Nikco/Downloads/mockito-core-3.0.0-javadoc%20(1).jar!/"/>
+			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry exported="true" kind="lib" path="lib/mockito-all-2.0.2-beta.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
