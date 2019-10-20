@@ -1,41 +1,47 @@
 package packageProyectoIntegrador;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Set;
-
 
 public class Sitio {
 
-	private List<Usuario> usuarios;
-	private List<Inmueble> inmuebles;
-	private List<Publicacion> publicaciones;
-	private IBusqueda buscador;
-	
-	/*	constructor	*/
-	
-	public Sitio() {
-		super();
-		this.inmuebles = new ArrayList<Inmueble>();
-		this.publicaciones = new ArrayList<Publicacion>();
-		this.usuarios = new ArrayList<Usuario>();
-		this.buscador = null;
-	}
+	private Set<Usuario> usuarios;
+	private Set<Inmueble> inmuebles;
+	private Set<Publicacion> publicaciones;
 
-	/*	getter y setters	*/
-	
-	public List<Usuario> getUsuarios() {
+	public Set<Usuario> getUsuarios() {
 		return this.usuarios;
 	}
+		
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
 
-	public List<Inmueble> getInmuebles() {
+	public Set<Inmueble> getInmuebles() {
 		return inmuebles;
 	}
 
-	public List<Publicacion> getPublicaciones() {
+	public void setInmuebles(Set<Inmueble> inmuebles) {
+		this.inmuebles = inmuebles;
+	}
+
+	public Set<Publicacion> getPublicaciones() {
 		return publicaciones;
 	}
 
+	public void setPublicaciones(Set<Publicacion> publicaciones) {
+		this.publicaciones = publicaciones;
+	}
+	
+	
+	public Sitio() {
+		super();
+		this.setUsuarios(new HashSet<Usuario>());
+		this.setInmuebles(new HashSet<Inmueble>());
+		this.setPublicaciones(new HashSet<Publicacion>());
+	}
+
+	
 	public void publicar(Publicacion publi) {
 		this.getPublicaciones().add(publi);
 	}
@@ -48,14 +54,7 @@ public class Sitio {
 		this.getUsuarios().add(usuario);
 	}
 	
-	/*	metodos para busquedas	*/
-	
-	public Set<Publicacion> buscarPublicacion() {
-		return (buscador.filtrarBusqueda(publicaciones));	
+	public Set<Publicacion> buscarPublicaciones(Buscador buscador) {
+		return buscador.buscar(this.getPublicaciones());
 	}
-	
-	public void agregarBusqueda(IBusqueda unBuscador) {
-		this.buscador = unBuscador;
-	}
-	
 }

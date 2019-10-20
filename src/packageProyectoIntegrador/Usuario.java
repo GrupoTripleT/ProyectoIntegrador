@@ -33,9 +33,9 @@ public class Usuario {
 	}
 	public Usuario(String nombre, String apellido, String mail, Integer numero) {
 		super();
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.mail = mail;
-		this.numero = numero;
+		this.setNombre(nombre);
+		this.setApellido(apellido);
+		this.setMail(mail);
+		this.setNumero(numero);;
 	}
 }

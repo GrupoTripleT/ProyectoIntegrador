@@ -2,16 +2,22 @@ package packageProyectoIntegrador;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Publicacion {
 	
 	private Inmueble inmueble;
 	private Usuario propietario;
-	private List<Reserva> reservas;
+	private Set<Reserva> reservas;
 	
+	public void setReservas(Set<Reserva> reservas) {
+		this.reservas = reservas;
+	}
+
 	public Publicacion(Inmueble inmueble, Usuario propitario) { 
-		this.reservas = new ArrayList<Reserva>(); 
+		this.setReservas(new HashSet<Reserva>());
 		setInmueble(inmueble);
 		setPropietario(propitario);
 	}
@@ -32,14 +38,17 @@ public class Publicacion {
 		this.inmueble = inmueble;
 		}
 	
-	public List<Reserva> getReservas() {
-		return reservas;
+	public Set<Reserva> getReservas() {
+		return this.reservas;
 	}
 	
-	// #Metodos
-	public boolean esCiudadPublicacion(String unaCiudad) {
-		return (unaCiudad == this.getInmueble().getCiudad());
+	public String getPublicacionCiudad() {
+		return this.getInmueble().getCiudad();
 	}
+	
+	
+	// #Metodos
+	
 	
 	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){	
 		/*	proposito: evaluar si existe alguna reserva een estado aprobado y rango de fechas fe y fs.

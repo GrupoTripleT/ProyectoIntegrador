@@ -1,4 +1,4 @@
-package packageProyectoIntegrador;
+package packageProyectoIntegrador1;
 
 public class EstadoFinalizado extends EstadoReserva {
 

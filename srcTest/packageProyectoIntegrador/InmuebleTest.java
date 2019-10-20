@@ -59,7 +59,12 @@ class InmuebleTest {
 	// los Getter 
 	@Test
 	void testLosGettersDeUnInmuebleTipoDeInmueble() {
-		assertEquals("Departamento", inmuebleDePrueba.saberTipoDeInmueble());
+		assertEquals(departamento, inmuebleDePrueba.getTipoDeInmueble());
+	}
+	
+	@Test
+	void testLosGettersDeUnInmuebleTipoDeInmuebleOptenidoDelTipoDeInmuebleString() {
+		assertEquals("Departamento", inmuebleDePrueba.getElTipoDeInmueble());
 	}
 	
 	@Test
