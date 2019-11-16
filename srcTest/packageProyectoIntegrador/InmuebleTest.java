@@ -14,6 +14,7 @@ class InmuebleTest {
 
 	public Inmueble inmuebleDePrueba;
 	public TipoDeInmueble departamento;
+	public Usuario usuarioDummy;
 	
 	public Servicio agua;
 	public Servicio luz;
@@ -26,6 +27,8 @@ class InmuebleTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
+		usuarioDummy = mock (Usuario.class);
+		
 		departamento = mock (TipoDeInmueble.class);
 			when(departamento.getTipo()).thenReturn("Departamento");
 	
@@ -42,7 +45,7 @@ class InmuebleTest {
 
 		
 		inmuebleDePrueba = new Inmueble
-				(departamento, 3, "Argentina", "Buenos Aires", "Calle Argentino Roca 4795", 
+				(usuarioDummy, departamento, 3, "Argentina", "Buenos Aires", "Calle Argentino Roca 4795", 
 						servicios , 12000.00, diezAM, trecePM );
 	}
 	

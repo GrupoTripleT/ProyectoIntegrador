@@ -14,6 +14,7 @@ public class Inmueble {
 	private Double precio;
 	private LocalTime horarioCheckIn;
 	private LocalTime horarioCheckOut;
+	private Usuario propietario;
 	
 	public TipoDeInmueble getTipoDeInmueble() {
 		return this.tipoDeInmueble;
@@ -21,6 +22,15 @@ public class Inmueble {
 
 	public String getElTipoDeInmueble() {
 		return this.getTipoDeInmueble().getTipo();
+	}
+	
+	
+	public Usuario getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Usuario propietario) {
+		this.propietario = propietario;
 	}
 	
 	public void setTipoDeInmueble(TipoDeInmueble tipoDeInmueble) {
@@ -92,9 +102,10 @@ public class Inmueble {
 	}
 	
 
-	public Inmueble(TipoDeInmueble tipoDeInmueble, Integer capacidad, String pais, String ciudad, String direccion,
+	public Inmueble(Usuario propietario,TipoDeInmueble tipoDeInmueble, Integer capacidad, String pais, String ciudad, String direccion,
 			List<Servicio> servicios, Double precio, LocalTime horarioCheckIn, LocalTime horarioCheckOut) {
 		super();
+		this.setPropietario(propietario);
 		this.setTipoDeInmueble(tipoDeInmueble);
 		this.setCapacidad(capacidad);
 		this.setPais(pais);

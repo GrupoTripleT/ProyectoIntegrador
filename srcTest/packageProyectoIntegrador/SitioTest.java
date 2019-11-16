@@ -51,13 +51,12 @@ class SitioTest {
 		LocalDate fechaEntrada = LocalDate.now();
 		LocalDate fechaSalida = LocalDate.parse("24/10/2019", formatter);
 		
-		Usuario usuarioInquilinoDummy = mock (Usuario.class);
 		Usuario usuarioPropiDummy = mock (Usuario.class);
 		inmuebleDummy = mock (Inmueble.class);
 		
 		Reserva reserva = new Reserva(fechaEntrada, fechaSalida, usuarioPropiDummy);
 
-		Publicacion publicacion = new Publicacion(inmuebleDummy, usuarioInquilinoDummy);
+		Publicacion publicacion = new Publicacion(inmuebleDummy, LocalDate.parse("24/10/2020", formatter));
 		
 		publicacion.agregarReserva(reserva);
 		

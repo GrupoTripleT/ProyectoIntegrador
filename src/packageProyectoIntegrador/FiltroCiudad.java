@@ -18,7 +18,7 @@ public class FiltroCiudad extends Filtro {
 	
 	
 	public Boolean esPublicacionFiltrada(Publicacion publicacion) {
-		return publicacion.getPublicacionCiudad() == this.getCiudad();
+		return publicacion.getPublicacionCiudad().equals(this.getCiudad());
 	}
 
 }

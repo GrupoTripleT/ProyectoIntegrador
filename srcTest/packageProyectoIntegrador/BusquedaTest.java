@@ -48,12 +48,16 @@ class BusquedaTest {
 			when(inmuebleDammyCiudadBA.getCiudad()).thenReturn("Buenos Aires");
 			
 		
-		publicacionUbicacionCordoba = new Publicacion(inmuebleDammyCiudadCordoba, usuarioDammy);
+		publicacionUbicacionCordoba = new Publicacion(inmuebleDammyCiudadCordoba, 
+				LocalDate.parse("20/10/2020", formatter));
 			
-		publicacionUbicacionCordoba2 = new Publicacion(inmuebleDammyCiudadCordoba, usuarioDammy);
+		publicacionUbicacionCordoba2 = new Publicacion(inmuebleDammyCiudadCordoba,
+				LocalDate.parse("20/10/2020", formatter));
 			
-		publicacionUbicacionBuenosAires = new Publicacion(inmuebleDammyCiudadBA, usuarioDammy);
-		publicacionUbicacionBuenosAires2 = new Publicacion(inmuebleDammyCiudadBA, usuarioDammy);
+		publicacionUbicacionBuenosAires = new Publicacion(inmuebleDammyCiudadBA, 
+				LocalDate.parse("20/10/2020", formatter));
+		publicacionUbicacionBuenosAires2 = new Publicacion(inmuebleDammyCiudadBA, 
+				LocalDate.parse("20/10/2020", formatter));
 
 		buscador = new Buscador();		
 	}
@@ -85,7 +89,8 @@ class BusquedaTest {
 		
 		sitio.publicar(publicacionUbicacionBuenosAires);
 		
-		filtroFechaPrueba = new FiltroFecha(LocalDate.parse("20/10/2019", formatter), LocalDate.parse("25/10/2019", formatter));
+		filtroFechaPrueba = new FiltroFecha(LocalDate.parse("20/10/2019", formatter), 
+				LocalDate.parse("25/10/2019", formatter));
 		buscador.agregarFiltro(filtroFechaPrueba);
 		
 		assertTrue(sitio.buscarPublicaciones(buscador).contains(publicacionUbicacionBuenosAires));

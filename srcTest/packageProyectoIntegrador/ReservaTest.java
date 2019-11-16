@@ -26,7 +26,7 @@ class ReservaTest {
 	
 	@BeforeEach
 	void setUp() throws Exception {
-		publicacion = new Publicacion(inmuebleDummy, propiatarioDummy);
+		publicacion = new Publicacion(inmuebleDummy, LocalDate.parse("24/10/2020", formatter));
 		site.publicar(publicacion);
 	}
 

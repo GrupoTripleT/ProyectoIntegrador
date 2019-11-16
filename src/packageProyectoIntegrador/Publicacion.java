@@ -7,25 +7,37 @@ import java.util.Set;
 public class Publicacion {
 	
 	private Inmueble inmueble;
-	private Usuario propietario;
 	private Set<Reserva> reservas;
+	private LocalDate fechaInicio;
+	private LocalDate fechaFin;
 	
 	public void setReservas(Set<Reserva> reservas) {
 		this.reservas = reservas;
 	}
 
-	public Publicacion(Inmueble inmueble, Usuario propitario) { 
+	public Publicacion(Inmueble inmueble, LocalDate fechaFin) { 
 		this.setReservas(new HashSet<Reserva>());
 		setInmueble(inmueble);
-		setPropietario(propitario);
+		setFechaInicio(LocalDate.now());
+		setFechaFin(fechaFin);
 	}
 	
-	public Usuario getPropietario() {
-		return propietario;
+	
+	
+	public LocalDate getFechaInicio() {
+		return fechaInicio;
 	}
 
-	public void setPropietario(Usuario propietario) {
-		this.propietario = propietario;
+	public LocalDate getFechaFin() {
+		return fechaFin;
+	}
+
+	private void setFechaInicio(LocalDate fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	private void setFechaFin(LocalDate fechaFin) {
+		this.fechaFin = fechaFin;
 	}
 
 	public Inmueble getInmueble() {
@@ -36,6 +48,10 @@ public class Publicacion {
 		this.inmueble = inmueble;
 		}
 	
+	//TODO: realizar la logica para saber si esta activa
+	public Boolean estaActiva() {
+		return true;
+	}
 	public Set<Reserva> getReservas() {
 		return this.reservas;
 	}

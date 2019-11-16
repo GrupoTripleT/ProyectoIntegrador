@@ -1,4 +1,4 @@
-package packageProyectoIntegrador;
+	package packageProyectoIntegrador;
 
 public class Servicio {
 	
