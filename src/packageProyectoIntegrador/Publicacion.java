@@ -63,7 +63,7 @@ public class Publicacion {
 		return reservas.stream().anyMatch(rs ->
 			(esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
 			esFechaIncluidaEnRangoFechas(fs, rs.getFechaEntrada(), rs.getFechaSalida())) &&
-			rs.getEstado() instanceof EstadoAprobado);
+			rs.getEstado().esEstadoAutorizado());
 	}
 
 	private boolean esFechaIncluidaEnRangoFechas(LocalDate fechaEvaluar, LocalDate rangoInicial, LocalDate rangoFinal) {
@@ -81,7 +81,15 @@ public class Publicacion {
 	}
 
 	public void aprobarReserva(Reserva r) {
-		r.cambiarEstado(new EstadoAprobado());
+		r.aprobarReserva();
+	}
+	
+	public void finalizarReserva(Reserva r) {
+		r.aprobarReserva();
+	}
+	
+	public void cancelarReserva(Reserva r) {
+		r.aprobarReserva();
 	}
 
 	public Boolean estaVigente () {

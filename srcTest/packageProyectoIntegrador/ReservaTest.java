@@ -3,7 +3,6 @@ package packageProyectoIntegrador;
 import static org.mockito.Mockito.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -96,7 +95,7 @@ class ReservaTest {
 	@Test
 	void reservaNoValidaFechaEntradaEnRango() {
 		fechaEntrada = LocalDate.now() ;
-		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+		fechaSalida = LocalDate.parse("24/11/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		
@@ -154,8 +153,31 @@ class ReservaTest {
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		assertEquals(true, reserva.getEstado() instanceof EstadoAprobado);
+		assertEquals(true, reserva.getEstado().esEstadoAutorizado());
 		
+	}
+	
+	@Test 
+	void cancelarReserva(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		publicacion.agregarReserva(reserva);
+		publicacion.cancelarReserva(reserva);
+		assertEquals(false, reserva.getEstado() instanceof EstadoCancelado);
+	}
+	
+	@Test 
+	void finalizarReserva(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
+		publicacion.finalizarReserva(reserva);
+		assertEquals(true, reserva.getEstado() instanceof EstadoFinalizado);
 	}
 
 }

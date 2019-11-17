@@ -4,6 +4,12 @@ public abstract class EstadoReserva {
 
 	protected IEmail email;
 
-	abstract void procesarReserva(Reserva r);
+	public void cambiarEstado(Reserva r) { 
+		
+	}
+	
+	public Boolean esEstadoAutorizado() {
+		return false;
+	}
 
 }
