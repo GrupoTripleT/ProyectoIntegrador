@@ -62,7 +62,7 @@ class SitioTest {
 		
 		sitioWeb.aprobarReserva(publicacion, reserva);
 		
-		assertEquals(true, reserva.getEstado() instanceof EstadoAprobado);
+		assertEquals(true, reserva.getEstado().esEstadoAutorizado());
 		
 	}
 

@@ -22,8 +22,6 @@ public class Publicacion {
 		setFechaFin(fechaFin);
 	}
 	
-	
-	
 	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
@@ -70,7 +68,7 @@ public class Publicacion {
 		return reservas.stream().anyMatch(rs -> 
 			(esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
 			esFechaIncluidaEnRangoFechas(fs, rs.getFechaEntrada(), rs.getFechaSalida())) &&
-			rs.getEstado() instanceof EstadoAprobado); 
+			rs.getEstado().esEstadoAutorizado()); 
 	}
 	
 	
@@ -89,7 +87,15 @@ public class Publicacion {
 	}
 	
 	public void aprobarReserva(Reserva r) {
-		r.cambiarEstado(new EstadoAprobado());
+		r.aprobarReserva();
+	}
+	
+	public void finalizarReserva(Reserva r) {
+		r.aprobarReserva();
+	}
+	
+	public void cancelarReserva(Reserva r) {
+		r.aprobarReserva();
 	}
 	// #endMetodos
 }
