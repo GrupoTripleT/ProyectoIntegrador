@@ -1,8 +1,14 @@
 package packageProyectoIntegrador;
 
 public class EstadoSolicitud extends EstadoReserva {
+	
 	@Override
-	public void cambiarEstado(Reserva r) {
+	protected void aprobar(Reserva r) {
 		r.setEstado(new EstadoAprobado());
+	}
+	
+	@Override
+	protected void cancelar(Reserva r) {
+		r.setEstado(new EstadoCancelado());
 	}
 }

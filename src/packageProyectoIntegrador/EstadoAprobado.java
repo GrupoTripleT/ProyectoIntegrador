@@ -1,17 +1,19 @@
 package packageProyectoIntegrador;
 
 public class EstadoAprobado extends EstadoReserva {
-
+	
 	@Override
-	public void cambiarEstado(Reserva r) {
-		r.setEstado(new EstadoFinalizado());
-		//this.email.enviar(r.getInquilino(), "Se ha aprobado su solicitud");
-		r.getInquilino();
+	protected Boolean esEstadoAutorizado() {
+		return true;
 	}
 	
 	@Override
-	public Boolean esEstadoAutorizado() {
-		return true;
+	protected void finalizar(Reserva r) {
+		r.setEstado(new EstadoFinalizado());
 	}
-
+	
+	@Override
+	protected void cancelar(Reserva r) {
+		r.setEstado(new EstadoCancelado());
+	}
 }

@@ -41,6 +41,15 @@ class ReservaTest {
 	}
 	
 	@Test
+	void verificarReserva() {
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		assertTrue(reserva.getInquilino().equals(inquilinoDummy));
+	}
+	
+	@Test
 	void agregarReserva() { 
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -169,7 +178,7 @@ class ReservaTest {
 	}
 	
 	@Test 
-	void cancelarReserva(){
+	void cancelarReservaPorAprobar(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
@@ -177,6 +186,32 @@ class ReservaTest {
 		publicacion.agregarReserva(reserva);
 		publicacion.cancelarReserva(reserva);
 		assertEquals(true, reserva.getEstado() instanceof EstadoCancelado);
+	}
+	
+	@Test 
+	void cancelarReservaAprobada(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
+		publicacion.cancelarReserva(reserva);
+		assertEquals(true, reserva.getEstado() instanceof EstadoCancelado);
+	}
+	
+	@Test 
+	void noSeCancelaUnaReservaFinalizada(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
+		publicacion.finalizarReserva(reserva);
+		publicacion.cancelarReserva(reserva);
+		assertEquals(false, reserva.getEstado().esEstadoCancelado());
+		assertEquals(true, reserva.getEstado().esEstadoFinalizado());
 	}
 	
 	@Test 
@@ -188,7 +223,7 @@ class ReservaTest {
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
 		publicacion.finalizarReserva(reserva);
-		assertEquals(true, reserva.getEstado() instanceof EstadoFinalizado);
+		assertEquals(true, reserva.getEstado().esEstadoFinalizado());
 	}
 	
 	@Test 
@@ -201,7 +236,21 @@ class ReservaTest {
 		publicacion.aprobarReserva(reserva);
 		publicacion.finalizarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		assertEquals(true, reserva.getEstado() instanceof EstadoFinalizado);
+		assertEquals(true, reserva.getEstado().esEstadoFinalizado());
+	}
+	
+	@Test 
+	void noSeFinalizaUnaReservaCanceladaa(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
+
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
+		publicacion.cancelarReserva(reserva);
+		publicacion.finalizarReserva(reserva);
+		assertEquals(false, reserva.getEstado().esEstadoFinalizado());
+		assertEquals(true, reserva.getEstado().esEstadoCancelado());
 	}
 	
 }

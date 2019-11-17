@@ -49,15 +49,15 @@ public class Reserva {
 	}
 	
 	public void aprobarReserva() {
-		this.getEstado().cambiarEstado(this);
+		this.getEstado().aprobar(this);
 	}
 	
 	public void finalizarReserva() {
-		this.getEstado().cambiarEstado(this);
+		this.getEstado().finalizar(this);
 	}
 	
 	public void cancelarReserva() {
-		this.setEstado(new EstadoCancelado());
+		this.getEstado().cancelar(this);
 	}
 	
 }

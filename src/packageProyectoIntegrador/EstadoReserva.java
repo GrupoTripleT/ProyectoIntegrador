@@ -3,13 +3,23 @@ package packageProyectoIntegrador;
 public abstract class EstadoReserva {
 
 	protected IEmail email;
-
-	public void cambiarEstado(Reserva r) { 
-		
-	}
 	
-	public Boolean esEstadoAutorizado() {
+	protected Boolean esEstadoAutorizado() {
 		return false;
 	}
+	
+	protected Boolean esEstadoFinalizado() {
+		return false;
+	}
+	
+	protected Boolean esEstadoCancelado() {
+		return false;
+	}
+
+	protected void aprobar(Reserva r) {}
+	
+	protected void finalizar(Reserva r) {}
+	
+	protected void cancelar(Reserva r) {}
 
 }
