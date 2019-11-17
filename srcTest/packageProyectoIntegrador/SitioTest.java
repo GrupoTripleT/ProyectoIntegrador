@@ -40,6 +40,7 @@ class SitioTest {
 	@Test
 	void testPodePublicarInmueble() { // Testeo que creado la publicacion el sitio lo pueda guardar correctamente
 		publicacionDummy = mock (Publicacion.class);
+			when(publicacionDummy.estaVigente()).thenReturn(true);
 		assertEquals(true, sitioWeb.getPublicaciones().isEmpty());
 		sitioWeb.publicar(publicacionDummy);
 		assertEquals(1, sitioWeb.getPublicaciones().size());
