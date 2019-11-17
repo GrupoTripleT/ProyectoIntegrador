@@ -85,11 +85,11 @@ public class Publicacion {
 	}
 	
 	public void finalizarReserva(Reserva r) {
-		r.aprobarReserva();
+		r.finalizarReserva();
 	}
 	
 	public void cancelarReserva(Reserva r) {
-		r.aprobarReserva();
+		r.cancelarReserva();
 	}
 
 	public Boolean estaVigente () {

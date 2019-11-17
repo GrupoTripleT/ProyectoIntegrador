@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ReservaTest {
@@ -17,6 +18,8 @@ class ReservaTest {
 	Usuario propiatarioDummy = mock(Usuario.class);
 	Usuario inquilinoDummy = mock(Usuario.class);
 	
+	LocalDate hoy;
+	LocalDate fin;
 	LocalDate fechaEntrada;
 	LocalDate fechaSalida;
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
@@ -28,7 +31,15 @@ class ReservaTest {
 		publicacion = new Publicacion(inmuebleDummy, LocalDate.parse("24/10/2020", formatter));
 		site.publicar(publicacion);
 	}
-
+	
+	@Test
+	void verificarPublicacion() {
+		hoy = LocalDate.now();
+		fin = LocalDate.parse("24/10/2020", formatter);
+		assertTrue(publicacion.getFechaInicio().equals(hoy));
+		assertTrue(publicacion.getFechaFin().equals(fin));
+	}
+	
 	@Test
 	void agregarReserva() { 
 		fechaEntrada = LocalDate.now();
@@ -165,7 +176,7 @@ class ReservaTest {
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		publicacion.agregarReserva(reserva);
 		publicacion.cancelarReserva(reserva);
-		assertEquals(false, reserva.getEstado() instanceof EstadoCancelado);
+		assertEquals(true, reserva.getEstado() instanceof EstadoCancelado);
 	}
 	
 	@Test 

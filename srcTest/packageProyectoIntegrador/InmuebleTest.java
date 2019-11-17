@@ -43,22 +43,11 @@ class InmuebleTest {
 		
 		servicios = new ArrayList<Servicio>(Arrays.asList(internet,agua,luz));
 
-		
 		inmuebleDePrueba = new Inmueble
 				(usuarioDummy, departamento, 3, "Argentina", "Buenos Aires", "Calle Argentino Roca 4795", 
 						servicios , 12000.00, diezAM, trecePM );
 	}
 	
-	
-	
-	
-
-	//Testeo  el constructor de inmueble
-	@Test
-	void test() {
-		
-	}
-
 	// los Getter 
 	@Test
 	void testLosGettersDeUnInmuebleTipoDeInmueble() {
@@ -88,6 +77,21 @@ class InmuebleTest {
 	@Test
 	void testLosGettersDeUnInmuebleDireccion() {
 		assertEquals("Calle Argentino Roca 4795", inmuebleDePrueba.getDireccion());
+	}
+	
+	@Test
+	void testLosGettersDeUnInmueblePropietario() {
+		assertEquals(usuarioDummy, inmuebleDePrueba.getPropietario());
+	}
+	
+	@Test
+	void testLosGettersDeUnInmuebleCheckIn() {
+		assertEquals(diezAM, inmuebleDePrueba.getHorarioCheckIn());
+	}
+	
+	@Test
+	void testLosGettersDeUnInmuebleCheckOut() {
+		assertEquals(trecePM, inmuebleDePrueba.getHorarioCheckOut());
 	}
 	
 	@Test

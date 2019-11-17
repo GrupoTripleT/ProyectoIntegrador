@@ -19,6 +19,8 @@ public class Sitio {
 		this.setUsuarios(new HashSet<Usuario>());
 		this.setInmuebles(new HashSet<Inmueble>());
 		this.setPublicaciones(new HashSet<Publicacion>());
+		this.setServicios(new HashSet<Servicio>());
+		this.setTiposDeInmuebles(new HashSet<TipoDeInmueble>());;
 	}
 
 

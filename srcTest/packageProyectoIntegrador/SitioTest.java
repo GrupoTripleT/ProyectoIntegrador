@@ -1,5 +1,6 @@
 package packageProyectoIntegrador;
 
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,12 +15,56 @@ class SitioTest {
 	public Inmueble inmuebleDummy;
 	public Usuario usuarioDummy;
 	public Publicacion publicacionDummy;
+	public TipoDeInmueble unTipoInmueble;
+	public TipoDeInmueble tipoInmuebleDummy1;
+	public TipoDeInmueble tipoInmuebleDummy2;
+	public Servicio unServicio;
+	public Servicio tipoServicioDummy1;
+	public Servicio tipoServicioDummy2;
 	
 	@BeforeEach
 	void setUp() throws Exception {
 		sitioWeb = new Sitio();
 	}
-
+	
+	@Test
+	void testCrearNuevosTipoDeInmueble() {
+		unTipoInmueble = new TipoDeInmueble("Casa");
+		
+		assertEquals("Casa", unTipoInmueble.getTipo());
+	}
+	
+	@Test
+	void testAgregarTiposDeInmuebles() {
+		tipoInmuebleDummy1 = mock (TipoDeInmueble.class);
+		tipoInmuebleDummy2 = mock (TipoDeInmueble.class);
+		
+		sitioWeb.registrarTipoDeInmueble(tipoInmuebleDummy1);
+		sitioWeb.registrarTipoDeInmueble(tipoInmuebleDummy2);
+		
+		assertEquals(2, sitioWeb.getTiposDeInmuebles().size());
+		assertTrue(sitioWeb.getTiposDeInmuebles().contains(tipoInmuebleDummy1));
+	}
+	
+	@Test
+	void testCrearNuevosServicios() {
+		unServicio = new Servicio("WiFi");
+		
+		assertEquals("WiFi", unServicio.getTipoServicio());
+	}
+	
+	@Test
+	void testAgregarTiposDeServicios() {
+		tipoServicioDummy1 = mock (Servicio.class);
+		tipoServicioDummy2 = mock (Servicio.class);
+		
+		sitioWeb.registrarServicio(tipoServicioDummy1);
+		sitioWeb.registrarServicio(tipoServicioDummy2);
+		
+		assertEquals(2, sitioWeb.getServicios().size());
+		assertTrue(sitioWeb.getServicios().contains(tipoServicioDummy2));	
+	}
+	
 	@Test
 	void testPoderAgregarInmueble() { //testeo que creado el inmueble el sitio lo pueda guardar correctamente
 		inmuebleDummy = mock (Inmueble.class);
