@@ -108,7 +108,7 @@ class ReservaTest {
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
 		
 		
-		assertEquals(false, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
+		assertEquals(true, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 	}
 	
 	@Test
