@@ -190,5 +190,18 @@ class ReservaTest {
 		publicacion.finalizarReserva(reserva);
 		assertEquals(true, reserva.getEstado() instanceof EstadoFinalizado);
 	}
+	
+	@Test 
+	void noSeApruebaUnaReservaFinalizada(){
+		fechaEntrada = LocalDate.now();
+		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
+		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
+		publicacion.agregarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
+		publicacion.finalizarReserva(reserva);
+		publicacion.aprobarReserva(reserva);
+		assertEquals(true, reserva.getEstado() instanceof EstadoFinalizado);
+	}
+	
 }
