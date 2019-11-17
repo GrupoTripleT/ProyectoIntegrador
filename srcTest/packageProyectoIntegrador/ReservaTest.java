@@ -173,7 +173,7 @@ class ReservaTest {
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		assertEquals(true, reserva.getEstado().esEstadoAutorizado());
+		assertEquals(true, reserva.getEstado().esEstadoAprobado());
 		
 	}
 	

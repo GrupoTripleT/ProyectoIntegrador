@@ -63,7 +63,7 @@ public class Publicacion {
 		return reservas.stream().anyMatch(rs ->
 			(esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
 			esFechaIncluidaEnRangoFechas(fs, rs.getFechaEntrada(), rs.getFechaSalida())) &&
-			rs.getEstado().esEstadoAutorizado());
+			rs.getEstado().esEstadoAprobado());
 	}
 
 	private boolean esFechaIncluidaEnRangoFechas(LocalDate fechaEvaluar, LocalDate rangoInicial, LocalDate rangoFinal) {

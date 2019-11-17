@@ -4,7 +4,7 @@ public abstract class EstadoReserva {
 
 	protected IEmail email;
 	
-	protected Boolean esEstadoAutorizado() {
+	protected Boolean esEstadoAprobado() {
 		return false;
 	}
 	

@@ -3,7 +3,7 @@ package packageProyectoIntegrador;
 public class EstadoAprobado extends EstadoReserva {
 	
 	@Override
-	protected Boolean esEstadoAutorizado() {
+	protected Boolean esEstadoAprobado() {
 		return true;
 	}
 	
