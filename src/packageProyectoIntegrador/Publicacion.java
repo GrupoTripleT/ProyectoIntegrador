@@ -65,7 +65,7 @@ public class Publicacion {
 				.collect(Collectors.toSet());
 	}
 
-	private boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){
+	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){
 		/*	proposito: alternativa al check de fechas.
 		 *  Si existe alguna coincidencia denota true */
 		return this.getReservasAprobadas().stream().anyMatch(rs ->
@@ -93,7 +93,7 @@ public class Publicacion {
 
 	private boolean noHayFechasSolapadas(LocalDate inicio,LocalDate fin, LocalDate fe, LocalDate fs) {
 		/*	proposito: verifica (denota "true") que un rango de fechas de "inicion:fin" no esté
-		 		contenido dentro dentro de otro rango de fechas "fe:fs"*/
+		 	contenido dentro dentro de otro rango de fechas "fe:fs"*/
 		return fs.isBefore(inicio) || fe.isAfter(fin);
 	}
 
