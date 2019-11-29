@@ -105,6 +105,8 @@ public class Sitio {
 	}
 
 	public void aprobarReserva(Publicacion publicacion, Reserva reserva) {
-		publicacion.aprobarReserva(reserva);
+		if (publicacion.esReservaValida(reserva)) {
+			publicacion.aprobarReserva(reserva);
+		}
 	}
 }

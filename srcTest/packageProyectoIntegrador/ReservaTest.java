@@ -10,28 +10,28 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class ReservaTest {
-	
-	
+
+
 	Sitio site = new Sitio();
 	Publicacion publicacion;
 	Inmueble inmuebleDummy = mock(Inmueble.class);
 	Usuario propiatarioDummy = mock(Usuario.class);
 	Usuario inquilinoDummy = mock(Usuario.class);
-	
+
 	LocalDate hoy;
 	LocalDate fin;
 	LocalDate fechaEntrada;
 	LocalDate fechaSalida;
 	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
-	
+
 	Reserva reserva;
-	
+
 	@BeforeEach
 	void setUp() throws Exception {
 		publicacion = new Publicacion(inmuebleDummy, LocalDate.parse("24/10/2020", formatter));
 		site.publicar(publicacion);
 	}
-	
+
 	@Test
 	void verificarPublicacion() {
 		hoy = LocalDate.now();
@@ -39,7 +39,7 @@ class ReservaTest {
 		assertTrue(publicacion.getFechaInicio().equals(hoy));
 		assertTrue(publicacion.getFechaFin().equals(fin));
 	}
-	
+
 	@Test
 	void verificarReserva() {
 		fechaEntrada = LocalDate.now();
@@ -48,104 +48,104 @@ class ReservaTest {
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		assertTrue(reserva.getInquilino().equals(inquilinoDummy));
 	}
-	
+
 	@Test
-	void agregarReserva() { 
+	void agregarReserva() {
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
 		assertEquals(1, publicacion.getReservas().size());
 	}
-	
+
 	@Test
-	void noSePuedeAgregarReserva() { 
+	void noSePuedeAgregarReserva() {
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		
+
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
-		
+
 		assertEquals(1, publicacion.getReservas().size());
 	}
-	
-	
+
+
 	@Test
 	void reservaNoValidaFechaEntrada() {
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		
-		//nueva reserva 
+
+		//nueva reserva
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
-		
+
 		assertEquals(true, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 	}
-	
+
 	@Test
 	void reservaNoValidaFechaSalida() {
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		
-		//nueva reserva 
+
+		//nueva reserva
 		fechaEntrada = LocalDate.parse("01/01/0001", formatter); // solo para probar miss branchs test (coverage)
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
-		
-		
+
+
 		assertEquals(true, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 	}
-	
+
 	@Test
 	void reservaNoValidaFechaEntradaEnRango() {
 		fechaEntrada = LocalDate.now() ;
 		fechaSalida = LocalDate.parse("24/11/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		
-		//nueva reserva 
+
+		//nueva reserva
 		fechaEntrada = fechaEntrada.plusDays(1); // solo para probar miss branchs test (coverage)
 		fechaSalida = fechaSalida.plusDays(1);
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
-		
-		
+
+
 		assertEquals(true, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 	}
-	
+
 	@Test
 	void reservaValidaReservaEncontradaNoAprobada() {
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
 
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
-		
+
 		publicacion.agregarReserva(reserva);
-		
-		//nueva reserva 
+
+		//nueva reserva
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // intentar ingresar reserva misma fecha con una reserva ya aprobaba
-		
+
 		assertEquals(false, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
 	}
-	
+
 	@Test
 	void reservaValida() {
 		fechaEntrada = LocalDate.now();
@@ -153,19 +153,19 @@ class ReservaTest {
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy);
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
-		
+
 		fechaEntrada = LocalDate.parse("20/10/2020", formatter);
 		fechaSalida = LocalDate.parse("30/10/2020", formatter);
 		reserva = new Reserva(fechaEntrada, fechaSalida, inquilinoDummy); // no existe reserva previamente agregada en esta fecha
-		
+
 		assertEquals(false, publicacion.hayReservasEnFecha(reserva.getFechaEntrada(), reserva.getFechaSalida()));
-		
+
 		publicacion.agregarReserva(reserva);
-		
+
 		assertEquals(2, publicacion.getReservas().size());
 	}
-	
-	@Test 
+
+	@Test
 	void aprobarReserva(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -174,10 +174,10 @@ class ReservaTest {
 		publicacion.agregarReserva(reserva);
 		publicacion.aprobarReserva(reserva);
 		assertEquals(true, reserva.getEstado().esEstadoAprobado());
-		
+
 	}
-	
-	@Test 
+
+	@Test
 	void cancelarReservaPorAprobar(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -187,8 +187,8 @@ class ReservaTest {
 		publicacion.cancelarReserva(reserva);
 		assertEquals(true, reserva.getEstado() instanceof EstadoCancelado);
 	}
-	
-	@Test 
+
+	@Test
 	void cancelarReservaAprobada(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -199,8 +199,8 @@ class ReservaTest {
 		publicacion.cancelarReserva(reserva);
 		assertEquals(true, reserva.getEstado() instanceof EstadoCancelado);
 	}
-	
-	@Test 
+
+	@Test
 	void noSeCancelaUnaReservaFinalizada(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -213,8 +213,8 @@ class ReservaTest {
 		assertEquals(false, reserva.getEstado().esEstadoCancelado());
 		assertEquals(true, reserva.getEstado().esEstadoFinalizado());
 	}
-	
-	@Test 
+
+	@Test
 	void finalizarReserva(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -225,8 +225,8 @@ class ReservaTest {
 		publicacion.finalizarReserva(reserva);
 		assertEquals(true, reserva.getEstado().esEstadoFinalizado());
 	}
-	
-	@Test 
+
+	@Test
 	void noSeApruebaUnaReservaFinalizada(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -238,8 +238,8 @@ class ReservaTest {
 		publicacion.aprobarReserva(reserva);
 		assertEquals(true, reserva.getEstado().esEstadoFinalizado());
 	}
-	
-	@Test 
+
+	@Test
 	void noSeFinalizaUnaReservaCanceladaa(){
 		fechaEntrada = LocalDate.now();
 		fechaSalida = LocalDate.parse("24/10/2019", formatter);
@@ -252,5 +252,5 @@ class ReservaTest {
 		assertEquals(false, reserva.getEstado().esEstadoFinalizado());
 		assertEquals(true, reserva.getEstado().esEstadoCancelado());
 	}
-	
+
 }
