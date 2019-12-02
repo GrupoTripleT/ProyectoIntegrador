@@ -59,14 +59,14 @@ public class Publicacion {
 	// #Metodos
 
 	private Set<Reserva> getReservasAprobadas() {
-		/* proporsito: retorna una lista de reservas aprbadas */
+		/* proposito: retorna una lista de reservas aprobadas */
 		return this.getReservas().stream()
 			.filter(rs -> rs.estaAprobada())
 				.collect(Collectors.toSet());
 	}
 
 	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){
-		/*	proposito: alternativa al check de fechas.
+		/*	proposito: verificar si existe una reserva aprobada para el rango de fecha (fe:fs) propuesto.
 		 *  Si existe alguna coincidencia denota true */
 		return this.getReservasAprobadas().stream().anyMatch(rs ->
 			this.noHayFechasSolapadas(rs.getFechaEntrada(), rs.getFechaSalida(), fe, fs)
@@ -92,8 +92,8 @@ public class Publicacion {
 	}
 
 	private boolean noHayFechasSolapadas(LocalDate inicio,LocalDate fin, LocalDate fe, LocalDate fs) {
-		/*	proposito: verifica (denota "true") que un rango de fechas de "inicion:fin" no esté
-		 	contenido dentro dentro de otro rango de fechas "fe:fs"*/
+		/*	proposito: verifica (denota "true") que un rango de fechas de "inicio:fin" no esté
+		 * 	contenido dentro dentro de otro rango de fechas "fe:fs"*/
 		return fs.isBefore(inicio) || fe.isAfter(fin);
 	}
 
@@ -105,7 +105,7 @@ public class Publicacion {
 
 	public boolean esReservaValida(Reserva rs) {
 		/*	proposito: verifica (denota "true") que las fechas de la reserva esten contenidas
-				dentro del rango de fechas de la publicacion	*/
+				dentro del rango de fechas de vigencia de la publicacion	*/
 		return !this.noHayFechasSolapadas(this.getFechaInicio(), this.getFechaFin(), rs.getFechaEntrada(), rs.getFechaSalida());
 	}
 
