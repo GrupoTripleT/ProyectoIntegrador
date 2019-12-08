@@ -66,7 +66,7 @@ public class Publicacion {
 	}
 
 	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){
-		/*	proposito: alternativa al check de fechas.
+		/*	proposito: verificar si existe una reserva aprobada para el rango de fecha (fe:fs) propuesto.
 		 *  Si existe alguna coincidencia denota true */
 		return this.getReservasAprobadas().stream().anyMatch(rs ->
 			this.noHayFechasSolapadas(rs.getFechaEntrada(), rs.getFechaSalida(), fe, fs)
