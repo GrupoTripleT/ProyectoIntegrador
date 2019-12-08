@@ -59,7 +59,7 @@ public class Publicacion {
 	// #Metodos
 
 	private Set<Reserva> getReservasAprobadas() {
-		/* proporsito: retorna una lista de reservas aprbadas */
+		/* proposito: retorna una lista de reservas aprobadas */
 		return this.getReservas().stream()
 			.filter(rs -> rs.estaAprobada())
 				.collect(Collectors.toSet());
@@ -92,20 +92,20 @@ public class Publicacion {
 	}
 
 	private boolean noHayFechasSolapadas(LocalDate inicio,LocalDate fin, LocalDate fe, LocalDate fs) {
-		/*	proposito: verifica (denota "true") que un rango de fechas de "inicion:fin" no esté
-		 	contenido dentro dentro de otro rango de fechas "fe:fs"*/
+		/*	proposito: verifica (denota "true") que un rango de fechas "inicion:fin" no esta
+		 	contenida dentro de otro rango de fechas "fe:fs"	*/
 		return fs.isBefore(inicio) || fe.isAfter(fin);
 	}
 
 	public Boolean estaVigente () {
-		/*	proposito: evalua si la publicacion está vigente (no finalizo).
-		 *  compara fechaFin con la fecha de cuando se llama el metodo */
+		/*	proposito: evalua si la publicacion esta vigente (no finalizo).
+		 *  compara fechaFin con la fecha de cuando se llama el metodo 	*/
 		 return this.getFechaFin().isAfter(LocalDate.now());
 	}
 
 	public boolean esReservaValida(Reserva rs) {
 		/*	proposito: verifica (denota "true") que las fechas de la reserva esten contenidas
-				dentro del rango de fechas de la publicacion	*/
+			dentro del rango de fechas de vigencia la publicacion	*/
 		return !this.noHayFechasSolapadas(this.getFechaInicio(), this.getFechaFin(), rs.getFechaEntrada(), rs.getFechaSalida());
 	}
 
