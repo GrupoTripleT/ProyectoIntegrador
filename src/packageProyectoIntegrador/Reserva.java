@@ -19,7 +19,7 @@ public class Reserva {
 	public EstadoReserva getEstado() {
 		return estado;
 	}
-	
+
 	public void setEstado(EstadoReserva estado) {
 		this.estado = estado;
 	}
@@ -47,17 +47,21 @@ public class Reserva {
 	private void setInquilino(Usuario inquilino) {
 		this.inquilino = inquilino;
 	}
-	
+
 	public void aprobarReserva() {
 		this.getEstado().aprobar(this);
 	}
-	
+
 	public void finalizarReserva() {
 		this.getEstado().finalizar(this);
 	}
-	
+
 	public void cancelarReserva() {
 		this.getEstado().cancelar(this);
 	}
-	
+
+	public boolean estaAprobada() {
+		return estado.esEstadoAprobado();
+	}
+
 }

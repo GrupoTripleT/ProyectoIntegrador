@@ -3,6 +3,7 @@ package packageProyectoIntegrador;
 import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class Publicacion {
 
@@ -57,21 +58,19 @@ public class Publicacion {
 
 	// #Metodos
 
-	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){
-		/*	proposito: evaluar si existe alguna reserva een estado aprobado y rango de fechas fe y fs.
-		 *  Si existe alguna coincidencia denota true */
-		return reservas.stream().anyMatch(rs ->
-			(esFechaIncluidaEnRangoFechas(fe, rs.getFechaEntrada(), rs.getFechaSalida()) ||
-			esFechaIncluidaEnRangoFechas(fs, rs.getFechaEntrada(), rs.getFechaSalida())) &&
-			rs.getEstado().esEstadoAprobado());
+	private Set<Reserva> getReservasAprobadas() {
+		/* proposito: retorna una lista de reservas aprobadas */
+		return this.getReservas().stream()
+			.filter(rs -> rs.estaAprobada())
+				.collect(Collectors.toSet());
 	}
 
-	private boolean esFechaIncluidaEnRangoFechas(LocalDate fechaEvaluar, LocalDate rangoInicial, LocalDate rangoFinal) {
-		/*	proposito: evaluar si fechaEvaluar esta en el rango de fechas rangoInicial a rangoFinal.
-		 *  Si se encuentra en rango o es igual a alguno de sus extremos denota true */
-		return  fechaEvaluar.isEqual(rangoInicial) ||
-				fechaEvaluar.isEqual(rangoFinal) ||
-				(fechaEvaluar.isAfter(rangoInicial) && fechaEvaluar.isBefore(rangoFinal));
+	public boolean hayReservasEnFecha(LocalDate fe, LocalDate fs){
+		/*	proposito: verificar si existe una reserva aprobada para el rango de fecha (fe:fs) propuesto.
+		 *  Si existe alguna coincidencia denota true */
+		return this.getReservasAprobadas().stream().anyMatch(rs ->
+			this.noHayFechasSolapadas(rs.getFechaEntrada(), rs.getFechaSalida(), fe, fs)
+				);
 	}
 
 	public void agregarReserva(Reserva r) {
@@ -83,19 +82,31 @@ public class Publicacion {
 	public void aprobarReserva(Reserva r) {
 		r.aprobarReserva();
 	}
-	
+
 	public void finalizarReserva(Reserva r) {
 		r.finalizarReserva();
 	}
-	
+
 	public void cancelarReserva(Reserva r) {
 		r.cancelarReserva();
 	}
 
+	private boolean noHayFechasSolapadas(LocalDate inicio,LocalDate fin, LocalDate fe, LocalDate fs) {
+		/*	proposito: verifica (denota "true") que un rango de fechas "inicion:fin" no esta
+		 	contenida dentro de otro rango de fechas "fe:fs"	*/
+		return fs.isBefore(inicio) || fe.isAfter(fin);
+	}
+
 	public Boolean estaVigente () {
-		/*	proposito: evalua si la publicacion está vigente (no finalizo).
-		 *  compara fechaFin con la fecha de cuando se llama el metodo */
+		/*	proposito: evalua si la publicacion esta vigente (no finalizo).
+		 *  compara fechaFin con la fecha de cuando se llama el metodo 	*/
 		 return this.getFechaFin().isAfter(LocalDate.now());
+	}
+
+	public boolean esReservaValida(Reserva rs) {
+		/*	proposito: verifica (denota "true") que las fechas de la reserva esten contenidas
+			dentro del rango de fechas de vigencia la publicacion	*/
+		return !this.noHayFechasSolapadas(this.getFechaInicio(), this.getFechaFin(), rs.getFechaEntrada(), rs.getFechaSalida());
 	}
 
 	// #endMetodos
